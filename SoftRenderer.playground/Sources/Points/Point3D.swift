@@ -2,9 +2,9 @@ import Foundation
 
 // 3D World Point Coordinates
 public struct Point3D<F: FloatingPoint> {
-    var x: F
-    var y: F
-    var z: F
+    public var x: F
+    public var y: F
+    public var z: F
     
     public init(x: F, y: F, z: F) {
         self.x = x

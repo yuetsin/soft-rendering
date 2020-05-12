@@ -68,7 +68,16 @@ public class Triangle: Object2D, ObjectDrawProtocol {
             }
 
             for j in Int(A.x) ... Int(B.x) {
-                putPixel(pixels: &pixels, x: j, y: Int(tPointA.y) + i, size: worldSize, target: color2Pixel(color: tColorA))
+                if singleColor {
+                    // single color is fine
+                    putPixel(pixels: &pixels, x: j, y: Int(tPointA.y) + i, size: worldSize, target: color2Pixel(color: tColorA))
+                } else {
+                    // Gouraud interpolating
+                    let interpColor = GouraudInterpolate(at: Point2d(x: Double(j), y: tPointA.y + Double(i)),
+                                                         pointA: tPointA, pointB: tPointB, pointC: tPointC,
+                                                         nsColorA: tColorA, nsColorB: tColorB, nsColorC: tColorC)
+                    putPixel(pixels: &pixels, x: j, y: Int(tPointA.y) + i, size: worldSize, target: color2Pixel(color: interpColor))
+                }
             }
         }
     }

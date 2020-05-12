@@ -2,8 +2,8 @@ import Cocoa
 
 // 2D Screen Point Coordinates
 public struct Point2D<F: FloatingPoint> {
-    var x: F
-    var y: F
+    public var x: F
+    public var y: F
     
     public init(x: F, y: F) {
         self.x = x
