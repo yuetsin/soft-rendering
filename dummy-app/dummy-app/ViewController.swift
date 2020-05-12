@@ -18,8 +18,8 @@ class ViewController: NSViewController {
         let line = Line3D(beginPoint: randomPoint3d(size: canvasSize),
                           endPoint: randomPoint3d(size: canvasSize),
                           color: randomCIColor(), endColor: randomCIColor())
-        canvas.addObject(object: line)
-        canvas.render()
+        canvas.drawObject(object: line)
+        canvas.resample()
     }
     
     override func viewDidLoad() {
@@ -34,7 +34,7 @@ class ViewController: NSViewController {
 
         canvas.addObject(object: line)
         
-        let triangle = Triangle(pointA: Point2d(x: 0, y: 0),
+        let triangle = Fragment2D(pointA: Point2d(x: 0, y: 0),
                                 pointB: Point2d(x: 100, y: 30),
                                 pointC: Point2d(x: 50, y: 140),
                                 colorA: CIColor.yellow,
@@ -43,6 +43,8 @@ class ViewController: NSViewController {
         
         canvas.addObject(object: triangle)
         view.addSubview(canvas)
+        
+        canvas.render()
     }
 
     override var representedObject: Any? {

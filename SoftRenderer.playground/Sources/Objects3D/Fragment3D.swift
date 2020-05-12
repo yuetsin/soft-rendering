@@ -1,6 +1,6 @@
 import Cocoa
 
-class Fragment: ObjectDrawProtocol3D {
+class Fragment3D: ObjectDrawProtocol3D {
 
     var tPointA, tPointB, tPointC: Point3d!
     var tColorA, tColorB, tColorC: CIColor!

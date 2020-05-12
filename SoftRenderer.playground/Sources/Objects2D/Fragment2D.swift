@@ -1,6 +1,6 @@
 import Cocoa
 
-public class Triangle: ObjectDrawProtocol2D {
+public class Fragment2D: ObjectDrawProtocol2D {
     var tPointA, tPointB, tPointC: Point2d!
     var tColorA, tColorB, tColorC: CIColor!
     var singleColor: Bool!

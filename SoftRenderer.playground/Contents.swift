@@ -17,16 +17,16 @@ let triangle = Triangle(pointA: Point2d(x: 0, y: 0),
                         colorA: CIColor.yellow,
                         colorB: CIColor.cyan,
                         colorC: CIColor.magenta)
+//: put them on the canvas
+canvas.addObject(object: triangle)
+canvas.addObject(object: line)
 
-for _ in 0 ..< 1 {
+for _ in 0 ..< 100 {
     let line = Line3D(beginPoint: randomPoint3d(size: canvasSize),
                       endPoint: randomPoint3d(size: canvasSize),
                       color: randomCIColor(), endColor: randomCIColor())
     canvas.addObject(object: line)
 }
-//: put them on the canvas
-canvas.addObject(object: triangle)
-canvas.addObject(object: line)
 
 //: render it
 canvas.render()

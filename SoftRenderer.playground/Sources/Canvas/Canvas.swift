@@ -5,13 +5,13 @@ public class SRCanvas: NSImageView {
     
     // basic
     public var imageSize: CGSize!
-
-    private var worldCamera: Camera! = defaultCamera
+    public var canvasBgColor: CIColor!
+    private var worldCamera: Camera!
     
     // canvas buffer
     private var imageBuffer: [Pixel]!
     private var zBuffer: [Double]!
-    private var worldLights: [Light]! = []
+    private var worldLights: [Light]!
 
     // pre-rendering object queues
     private var objects2D: [ObjectDrawProtocol2D] = []
@@ -21,7 +21,9 @@ public class SRCanvas: NSImageView {
         // use NSView as a Canvas
         super.init(frame: NSRect(origin: .zero, size: canvasSize))
         imageSize = canvasSize
-        
+        canvasBgColor = bgColor
+        worldLights = []
+        worldCamera = defaultCamera
         refreshCanvas(size: canvasSize, color: bgColor)
     }
     
@@ -48,16 +50,18 @@ public class SRCanvas: NSImageView {
     }
 
     // directly draw objects to buffer
-    private func drawObject(object: ObjectDrawProtocol2D) {
+    public func drawObject(object: ObjectDrawProtocol2D) {
         object.drawOn(target: &imageBuffer, canvasSize: imageSize)
     }
     
-    private func drawObject(object: ObjectDrawProtocol3D) {
+    public func drawObject(object: ObjectDrawProtocol3D) {
         object.drawOn(target: &imageBuffer, canvasSize: imageSize, depthBuffer: &zBuffer, lights: &worldLights, camera: worldCamera)
     }
     
-    // render the buffer to NSImage object
+    // redraw any objects to the buffer, and resample it
     public func render() {
+        refreshCanvas(size: imageSize, color: canvasBgColor)
+        
         // render 3D objects first
         for object3D in objects3D {
             drawObject(object: object3D)
@@ -67,6 +71,11 @@ public class SRCanvas: NSImageView {
         for object2D in objects2D {
             drawObject(object: object2D)
         }
+        resample()
+    }
+    
+    // generate image from the buffer
+    public func resample() {
         image = BitmapHelper.convertToBitmap(pixels: &imageBuffer!, size: imageSize)
     }
 }

@@ -16,19 +16,20 @@
 		8A8FB089246AE9850016424A /* ObjectDrawProtocol3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FB071246AE9850016424A /* ObjectDrawProtocol3D.swift */; };
 		8A8FB08A246AE9850016424A /* Line3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FB073246AE9850016424A /* Line3D.swift */; };
 		8A8FB08B246AE9850016424A /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FB074246AE9850016424A /* Light.swift */; };
-		8A8FB08C246AE9850016424A /* Fragment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FB075246AE9850016424A /* Fragment.swift */; };
+		8A8FB08C246AE9850016424A /* Fragment3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FB075246AE9850016424A /* Fragment3D.swift */; };
 		8A8FB08D246AE9850016424A /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FB076246AE9850016424A /* Camera.swift */; };
 		8A8FB08E246AE9850016424A /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FB078246AE9850016424A /* Random.swift */; };
 		8A8FB08F246AE9850016424A /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FB07A246AE9850016424A /* Consts.swift */; };
 		8A8FB090246AE9850016424A /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FB07B246AE9850016424A /* Canvas.swift */; };
 		8A8FB091246AE9850016424A /* Line2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FB07D246AE9850016424A /* Line2D.swift */; };
-		8A8FB092246AE9850016424A /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FB07E246AE9850016424A /* Triangle.swift */; };
+		8A8FB092246AE9850016424A /* Fragment2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FB07E246AE9850016424A /* Fragment2D.swift */; };
 		8A8FB093246AE9850016424A /* Point2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FB080246AE9850016424A /* Point2D.swift */; };
 		8A8FB094246AE9850016424A /* ScreenPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FB081246AE9850016424A /* ScreenPoint.swift */; };
 		8A8FB095246AE9850016424A /* Point3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FB082246AE9850016424A /* Point3D.swift */; };
 		8A8FB096246AE9850016424A /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FB084246AE9850016424A /* Pixel.swift */; };
 		8A8FB097246AE9850016424A /* ColorInterpolate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FB085246AE9850016424A /* ColorInterpolate.swift */; };
 		8A8FB098246AE9850016424A /* BitmapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8FB086246AE9850016424A /* BitmapHelper.swift */; };
+		8AE5A26E246AED2700BBDA56 /* FragmentRasteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE5A26D246AED2600BBDA56 /* FragmentRasteration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,19 +45,20 @@
 		8A8FB071246AE9850016424A /* ObjectDrawProtocol3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectDrawProtocol3D.swift; sourceTree = "<group>"; };
 		8A8FB073246AE9850016424A /* Line3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line3D.swift; sourceTree = "<group>"; };
 		8A8FB074246AE9850016424A /* Light.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
-		8A8FB075246AE9850016424A /* Fragment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fragment.swift; sourceTree = "<group>"; };
+		8A8FB075246AE9850016424A /* Fragment3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fragment3D.swift; sourceTree = "<group>"; };
 		8A8FB076246AE9850016424A /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		8A8FB078246AE9850016424A /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		8A8FB07A246AE9850016424A /* Consts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		8A8FB07B246AE9850016424A /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		8A8FB07D246AE9850016424A /* Line2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line2D.swift; sourceTree = "<group>"; };
-		8A8FB07E246AE9850016424A /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		8A8FB07E246AE9850016424A /* Fragment2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fragment2D.swift; sourceTree = "<group>"; };
 		8A8FB080246AE9850016424A /* Point2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point2D.swift; sourceTree = "<group>"; };
 		8A8FB081246AE9850016424A /* ScreenPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenPoint.swift; sourceTree = "<group>"; };
 		8A8FB082246AE9850016424A /* Point3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point3D.swift; sourceTree = "<group>"; };
 		8A8FB084246AE9850016424A /* Pixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
 		8A8FB085246AE9850016424A /* ColorInterpolate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorInterpolate.swift; sourceTree = "<group>"; };
 		8A8FB086246AE9850016424A /* BitmapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitmapHelper.swift; sourceTree = "<group>"; };
+		8AE5A26D246AED2600BBDA56 /* FragmentRasteration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FragmentRasteration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				8A8FB06E246AE9850016424A /* LineRasteration.swift */,
+				8AE5A26D246AED2600BBDA56 /* FragmentRasteration.swift */,
 			);
 			path = Rasteration;
 			sourceTree = "<group>";
@@ -138,7 +141,7 @@
 			children = (
 				8A8FB073246AE9850016424A /* Line3D.swift */,
 				8A8FB074246AE9850016424A /* Light.swift */,
-				8A8FB075246AE9850016424A /* Fragment.swift */,
+				8A8FB075246AE9850016424A /* Fragment3D.swift */,
 				8A8FB076246AE9850016424A /* Camera.swift */,
 			);
 			path = Objects3D;
@@ -165,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				8A8FB07D246AE9850016424A /* Line2D.swift */,
-				8A8FB07E246AE9850016424A /* Triangle.swift */,
+				8A8FB07E246AE9850016424A /* Fragment2D.swift */,
 			);
 			path = Objects2D;
 			sourceTree = "<group>";
@@ -271,10 +274,11 @@
 				8A8FB091246AE9850016424A /* Line2D.swift in Sources */,
 				8A8FB097246AE9850016424A /* ColorInterpolate.swift in Sources */,
 				8A8FB094246AE9850016424A /* ScreenPoint.swift in Sources */,
-				8A8FB092246AE9850016424A /* Triangle.swift in Sources */,
+				8A8FB092246AE9850016424A /* Fragment2D.swift in Sources */,
+				8AE5A26E246AED2700BBDA56 /* FragmentRasteration.swift in Sources */,
 				8A8FB088246AE9850016424A /* ObjectDrawProtocol2D.swift in Sources */,
 				8A6D7161246A2F6A003CA46C /* AppDelegate.swift in Sources */,
-				8A8FB08C246AE9850016424A /* Fragment.swift in Sources */,
+				8A8FB08C246AE9850016424A /* Fragment3D.swift in Sources */,
 				8A8FB08B246AE9850016424A /* Light.swift in Sources */,
 				8A8FB08F246AE9850016424A /* Consts.swift in Sources */,
 				8A8FB089246AE9850016424A /* ObjectDrawProtocol3D.swift in Sources */,
