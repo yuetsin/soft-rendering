@@ -4,6 +4,8 @@ import PlaygroundSupport
 //: initialize a `SRCanvas`
 var canvas = SRCanvas(size: CGSize(width: 550, height: 400), color: .brown)
 
+PlaygroundPage.current.liveView = canvas
+
 let line = Line(objectPosition: Point2d(x: 10, y: 10),
                 worldSize: canvas.imageSize,
                 strokeWidth: 3.0,
@@ -13,5 +15,3 @@ let line = Line(objectPosition: Point2d(x: 10, y: 10),
 canvas.drawObject(object: line)
 
 canvas.render()
-
-print(canvas)
