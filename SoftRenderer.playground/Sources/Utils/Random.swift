@@ -1,0 +1,32 @@
+import Cocoa
+
+
+public extension Double {
+    static func random(_ lower: Double = 0, _ upper: Double = 100) -> Double {
+        return (Double(arc4random()) / 0xFFFFFFFF) * (upper - lower) + lower
+    }
+}
+
+public extension Float {
+    static func random(_ lower: Float = 0, _ upper: Float = 100) -> Float {
+        return (Float(arc4random()) / 4294967296) * (upper - lower) + lower
+    }
+}
+
+public extension CGFloat {
+    static func random(_ lower: CGFloat = 0, _ upper: CGFloat = 1) -> CGFloat {
+        return CGFloat(Float(arc4random()) / Float(UINT32_MAX)) * (upper - lower) + lower
+    }
+}
+
+public func randomPoint2d(size: CGSize) -> Point2d {
+    return Point2d(x: Double.random(0, Double(size.width)), y: Double.random(0, Double(size.height)))
+}
+
+public func randomPoint3d(size: CGSize) -> Point3d {
+    return Point3d(x: Double.random(0, Double(size.width)), y: Double.random(0, Double(size.height)), z: Double.random())
+}
+
+public func randomCIColor() -> CIColor {
+    return CIColor(red: CGFloat.random(), green: CGFloat.random(), blue: CGFloat.random(), alpha: CGFloat.random())
+}

@@ -21,7 +21,7 @@ class Fragment: ObjectDrawProtocol3D {
         tColorC = colorC ?? colorA
     }
     
-    func drawOn(target: inout [Pixel], camera: Camera, lights: [Light]) {
+    func drawOn(target: inout [Pixel], canvasSize: CGSize, depthBuffer: inout [Double], lights: inout [Light], camera: Camera) {
         // TODO
     }
 }
