@@ -2,15 +2,23 @@ import Cocoa
 
 public class Light {
     public var lightColor: CIColor!
-    public var lightPosition: Point3d!
     public var lightType: LightType!
     
+    // ambient light doesn't require lightPosition
+    public var lightPosition: Point3d?
+    
     public init(color: CIColor,
-                position: Point3d,
-                type: LightType) {
+                type: LightType,
+                position: Point3d? = nil) {
         lightColor = color
-        lightPosition = position
         lightType = type
+        
+        if type != .ambient {
+            if position == nil {
+                fatalError("\(type) light should have position")
+            }
+            lightPosition = position
+        }
     }
 }
 
