@@ -15,7 +15,7 @@ public class Light {
         
         if type != .ambient {
             if position == nil {
-                fatalError("\(type) light should have position")
+                fatalError("\(type) light should have a position")
             }
             lightPosition = position
         }

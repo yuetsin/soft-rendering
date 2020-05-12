@@ -9,7 +9,6 @@ public class Line2D: ObjectDrawProtocol2D {
                 endPoint: Point2d,
                 color: CIColor,
                 endColor: CIColor? = nil) {
-        // should have a basePosition
         lineBeginPos = beginPoint
         lineEndPos = endPoint
         lineBeginColor = color

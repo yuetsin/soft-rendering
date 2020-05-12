@@ -9,7 +9,6 @@ public class Line3D: ObjectDrawProtocol3D {
                 endPoint: Point3d,
                 color: CIColor,
                 endColor: CIColor? = nil) {
-        // should have a basePosition
         lineBeginPos = beginPoint
         lineEndPos = endPoint
         lineBeginColor = color
