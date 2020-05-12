@@ -4,7 +4,7 @@ public class Triangle: Object2D, ObjectDrawProtocol {
 
     var tPointA, tPointB, tPointC: Point2d!
     var tColorA, tColorB, tColorC: NSColor!
-//    var singleColor: Bool!
+    var singleColor: Bool!
 
     public init(objectPosition position: Point2d,
          worldSize size: CGSize,
@@ -25,7 +25,7 @@ public class Triangle: Object2D, ObjectDrawProtocol {
         tColorB = colorB ?? colorA
         tColorC = colorC ?? colorA
 
-//        singleColor = colorB == nil || colorC == nil
+        singleColor = colorB == nil || colorC == nil
     }
     
     public func drawOn(target: inout [Pixel]) {

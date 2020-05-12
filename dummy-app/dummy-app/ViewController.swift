@@ -21,8 +21,15 @@ class ViewController: NSViewController {
 
         // Do any additional setup after loading the view.
         
-        canvas = SRCanvas(size: CGSize(width: view.frame.size.width, height: max(view.frame.size.height - 56, 0)), color: .green)
-        
+        canvas = SRCanvas(size: CGSize(width: view.frame.size.width, height: max(view.frame.size.height - 56, 0)), color: .brown)
+
+        let line = Line(objectPosition: Point2d(x: 10, y: 10),
+                        worldSize: canvas.imageSize,
+                        strokeWidth: 3.0,
+                        beginPoint: Point2d(x: 10, y: 10),
+                        endPoint: Point2d(x: 30, y: 20), color: NSColor.red, endColor: NSColor.blue)
+
+        canvas.drawObject(object: line)
         view.addSubview(canvas)
     }
 
