@@ -6,24 +6,19 @@ var canvas = SRCanvas(size: CGSize(width: 250, height: 250), color: CIColor.clea
 
 PlaygroundPage.current.liveView = canvas
 
-let line = Line(objectPosition: Point2d(x: 10, y: 10),
-                worldSize: canvas.imageSize,
-//                strokeWidth: 3.0,
-                beginPoint: Point2d(x: 10, y: 10),
+let line = Line(beginPoint: Point2d(x: 30, y: 30),
                 endPoint: Point2d(x: 100, y: 120), color: CIColor.red, endColor: CIColor.blue)
-
-canvas.drawObject(object: line)
-
-let triangle = Triangle(objectPosition: Point2d(x: 30, y: 50),
-                        worldSize: canvas.imageSize,
-                        pointA: Point2d(x: 0, y: 0),
+let triangle = Triangle(pointA: Point2d(x: 0, y: 0),
                         pointB: Point2d(x: 100, y: 30),
                         pointC: Point2d(x: 50, y: 140),
-                        colorA: CIColor.white,
-                        colorB: CIColor.white,
-                        colorC: CIColor.blue)
+                        colorA: CIColor.yellow,
+                        colorB: CIColor.cyan,
+                        colorC: CIColor.magenta)
+
 
 canvas.drawObject(object: triangle)
+canvas.drawObject(object: line)
 
 canvas.render()
+
 

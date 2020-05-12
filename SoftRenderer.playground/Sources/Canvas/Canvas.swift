@@ -4,10 +4,12 @@ import CoreGraphics
 public class SRCanvas: NSImageView {
     public var imageSize: CGSize!
     private var imageBuffer: [Pixel]!
-    public var cameraPos: Point3d = Point3d(x: 5,y: 5, z: 5)
+    private var worldCamera: Camera!
+    private var zBuffer: [Double]!
+    private var worldLights: [Light]!
 
-    private var objects2D: [Object2D] = []
-    private var objects3D: [Object3D] = []
+    private var objects2D: [ObjectDrawProtocol2D] = []
+    private var objects3D: [ObjectDrawProtocol3D] = []
 
     public init(size canvasSize: CGSize = defaultSize, color bgColor: CIColor = defaultColor) {
         // use NSView as a Canvas
@@ -21,15 +23,21 @@ public class SRCanvas: NSImageView {
                             g: UInt8(bgColor.green * 255),
                             b: UInt8(bgColor.blue * 255))
 
-        imageBuffer = [Pixel](repeating: bgPixel, count: Int(canvasSize.width * canvasSize.height))
+        let pixelCount = Int(canvasSize.width * canvasSize.height)
+        imageBuffer = [Pixel](repeating: bgPixel, count: pixelCount)
+        zBuffer = [Double](repeating: -Double.infinity, count: pixelCount)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public func drawObject<F: ObjectDrawProtocol>(object: F) {
-        object.drawOn(target: &imageBuffer)
+    public func drawObject<F: ObjectDrawProtocol2D>(object: F) {
+        object.drawOn(target: &imageBuffer, canvasSize: imageSize)
+    }
+    
+    public func drawObject<F: ObjectDrawProtocol3D>(object: F) {
+        object.drawOn(target: &imageBuffer, camera: worldCamera, lights: worldLights)
     }
 
     public func render() {

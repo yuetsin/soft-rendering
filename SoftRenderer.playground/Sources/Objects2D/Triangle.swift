@@ -1,23 +1,19 @@
 import Cocoa
 
-public class Triangle: Object2D, ObjectDrawProtocol {
+public class Triangle: ObjectDrawProtocol2D {
     var tPointA, tPointB, tPointC: Point2d!
     var tColorA, tColorB, tColorC: CIColor!
     var singleColor: Bool!
 
-    public init(objectPosition position: Point2d,
-                worldSize size: CGSize,
-                pointA: Point2d,
+    public init(pointA: Point2d,
                 pointB: Point2d,
                 pointC: Point2d,
                 colorA: CIColor,
                 colorB: CIColor? = nil,
                 colorC: CIColor? = nil) {
-        super.init(objectPosition: position, worldSize: size)
-
-        tPointA = pointA + position
-        tPointB = pointB + position
-        tPointC = pointC + position
+        tPointA = pointA
+        tPointB = pointB
+        tPointC = pointC
         tColorA = colorA
 
         // if no `tColorB` or `tColorC` is provided, use `tColorA` instead
@@ -27,7 +23,7 @@ public class Triangle: Object2D, ObjectDrawProtocol {
         singleColor = colorB == nil || colorC == nil
     }
 
-    public func drawOn(target pixels: inout [Pixel]) {
+    public func drawOn(target pixels: inout [Pixel], canvasSize: CGSize) {
         if tPointA.y == tPointB.y && tPointA.y == tPointC.y {
             return
         }
@@ -70,13 +66,13 @@ public class Triangle: Object2D, ObjectDrawProtocol {
             for j in Int(A.x) ... Int(B.x) {
                 if singleColor {
                     // single color is fine
-                    putPixel(pixels: &pixels, x: j, y: Int(tPointA.y) + i, size: worldSize, target: color2Pixel(color: tColorA))
+                    putPixel(pixels: &pixels, x: j, y: Int(tPointA.y) + i, size: canvasSize, target: color2Pixel(color: tColorA))
                 } else {
                     // Gouraud interpolating
                     let interpColor = GouraudInterpolate(at: Point2d(x: Double(j), y: tPointA.y + Double(i)),
                                                          pointA: tPointA, pointB: tPointB, pointC: tPointC,
                                                          colorA: tColorA, colorB: tColorB, colorC: tColorC)
-                    putPixel(pixels: &pixels, x: j, y: Int(tPointA.y) + i, size: worldSize, target: color2Pixel(color: interpColor))
+                    putPixel(pixels: &pixels, x: j, y: Int(tPointA.y) + i, size: canvasSize, target: color2Pixel(color: interpColor))
                 }
             }
         }
