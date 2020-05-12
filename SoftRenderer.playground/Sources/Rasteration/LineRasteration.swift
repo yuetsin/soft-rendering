@@ -3,14 +3,14 @@ import Cocoa
 // Bresenham's approach
 
 @inlinable
-public func rasterate<F: FloatingPoint>(_ lineBeginPos: Point3D<F>, _ lineEndPos: Point3D<F>,
+public func rasterize<F: FloatingPoint>(_ lineBeginPos: Point3D<F>, _ lineEndPos: Point3D<F>,
                                         _ lineBeginColor: CIColor, _ lineEndColor: CIColor,
                                         handler: (Int, Int, Double, Double, Pixel) -> Void) {
     let z0 = Int(lineBeginPos.z as! Double), z1 = Int(lineEndPos.z as! Double)
     
     let flatBeginPos = Point2D<F>(x: lineBeginPos.x, y: lineBeginPos.y)
     let flatEndPos = Point2D<F>(x: lineEndPos.x, y: lineEndPos.y)
-    rasterate(flatBeginPos, flatEndPos,
+    rasterize(flatBeginPos, flatEndPos,
               lineBeginColor, lineEndColor, handler: { x, y, progress, pixel in
                 let z = Double(z1 - z0) * progress + Double(z0)
                 handler(x, y, z, progress, pixel)
@@ -18,7 +18,7 @@ public func rasterate<F: FloatingPoint>(_ lineBeginPos: Point3D<F>, _ lineEndPos
 }
 
 @inlinable
-public func rasterate<F: FloatingPoint>(_ lineBeginPos: Point2D<F>, _ lineEndPos: Point2D<F>,
+public func rasterize<F: FloatingPoint>(_ lineBeginPos: Point2D<F>, _ lineEndPos: Point2D<F>,
                                         _ lineBeginColor: CIColor, _ lineEndColor: CIColor,
                                         handler: (Int, Int, Double, Pixel) -> Void) {
     let singleColor = lineBeginColor == lineEndColor

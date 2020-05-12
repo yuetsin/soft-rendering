@@ -20,7 +20,7 @@ public class Line2D: ObjectDrawProtocol2D {
     }
 
     public func drawOn(target pixels: inout [Pixel], canvasSize: CGSize) {
-        rasterate(lineBeginPos, lineEndPos, lineBeginColor, lineEndColor, handler: { x, y, _, pixel in
+        rasterize(lineBeginPos, lineEndPos, lineBeginColor, lineEndColor, handler: { x, y, _, pixel in
             putPixel(pixels: &pixels, x: Int(x), y: Int(y), size: canvasSize, target: pixel)
         })
     }
