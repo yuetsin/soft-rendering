@@ -3,22 +3,22 @@ import Cocoa
 public class Line: Object2D, ObjectDrawProtocol {
     var lineBeginPos, lineEndPos: Point2d!
     var lineBeginColor, lineEndColor: NSColor!
-    var lineStrokeWidth: CGFloat!
+//    var lineStrokeWidth: CGFloat!
     var singleColor: Bool!
 
     public init(objectPosition position: Point2d,
                 worldSize size: CGSize,
-                strokeWidth: CGFloat,
+//                strokeWidth: CGFloat,
                 beginPoint: Point2d,
                 endPoint: Point2d,
                 color: NSColor,
-                endColor: NSColor?) {
+                endColor: NSColor? = nil) {
         super.init(objectPosition: position, worldSize: size)
 
         objectPosition = position
         worldSize = size
 
-        lineStrokeWidth = strokeWidth
+//        lineStrokeWidth = strokeWidth
 
         // should have a basePosition
         lineBeginPos = beginPoint + position

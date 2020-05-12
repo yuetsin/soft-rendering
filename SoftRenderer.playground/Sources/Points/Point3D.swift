@@ -20,3 +20,11 @@ func +<F>(left: Point3D<F>, right: Point3D<F>) -> Point3D<F> {
 func -<F>(left: Point3D<F>, right: Point3D<F>) -> Point3D<F> {
     return Point3D<F>(x: left.x - right.x, y: left.y - right.y, z: left.z - right.z)
 }
+
+func *<F>(left: Point3D<F>, right: F) -> Point3D<F> {
+    return Point3D<F>(x: left.x * right, y: left.y * right, z: left.z * right)
+}
+
+func /<F>(left: Point3D<F>, right: F) -> Point3D<F> {
+    return Point3D<F>(x: left.x / right, y: left.y / right, z: left.z / right)
+}

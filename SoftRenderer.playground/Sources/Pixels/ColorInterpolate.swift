@@ -1,14 +1,17 @@
 import Cocoa
 
 @inlinable
-public func ColorInterpolate(since: NSColor, till: NSColor, progress: CGFloat) -> NSColor {
-    let redDiff = till.redComponent - since.redComponent
-    let greenDiff = till.greenComponent - since.greenComponent
-    let blueDiff = till.blueComponent - since.blueComponent
-    let alphaDiff = till.alphaComponent - since.alphaComponent
+public func ColorInterpolate(since nsSince: NSColor, till nsTill: NSColor, progress: CGFloat) -> NSColor {
+    let since = CIColor(color: nsSince)!
+    let till = CIColor(color: nsTill)!
+    
+    let redDiff = till.red - since.red
+    let greenDiff = till.green - since.green
+    let blueDiff = till.blue - since.blue
+    let alphaDiff = till.alpha - since.alpha
 
-    return NSColor(red: since.redComponent + progress * redDiff,
-            green: since.greenComponent + progress * greenDiff,
-            blue: since.blueComponent + progress * blueDiff,
-            alpha: since.alphaComponent + progress * alphaDiff)
+    return NSColor(red: since.red + progress * redDiff,
+            green: since.green + progress * greenDiff,
+            blue: since.blue + progress * blueDiff,
+            alpha: since.alpha + progress * alphaDiff)
 }
