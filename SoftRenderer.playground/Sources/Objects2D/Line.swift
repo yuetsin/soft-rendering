@@ -2,7 +2,7 @@ import Cocoa
 
 public class Line: Object2D, ObjectDrawProtocol {
     var lineBeginPos, lineEndPos: Point2d!
-    var lineBeginColor, lineEndColor: NSColor!
+    var lineBeginColor, lineEndColor: CIColor!
 //    var lineStrokeWidth: CGFloat!
     var singleColor: Bool!
 
@@ -11,8 +11,8 @@ public class Line: Object2D, ObjectDrawProtocol {
 //                strokeWidth: CGFloat,
                 beginPoint: Point2d,
                 endPoint: Point2d,
-                color: NSColor,
-                endColor: NSColor? = nil) {
+                color: CIColor,
+                endColor: CIColor? = nil) {
         super.init(objectPosition: position, worldSize: size)
 
         objectPosition = position

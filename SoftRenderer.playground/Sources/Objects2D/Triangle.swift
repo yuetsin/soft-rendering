@@ -2,7 +2,7 @@ import Cocoa
 
 public class Triangle: Object2D, ObjectDrawProtocol {
     var tPointA, tPointB, tPointC: Point2d!
-    var tColorA, tColorB, tColorC: NSColor!
+    var tColorA, tColorB, tColorC: CIColor!
     var singleColor: Bool!
 
     public init(objectPosition position: Point2d,
@@ -10,9 +10,9 @@ public class Triangle: Object2D, ObjectDrawProtocol {
                 pointA: Point2d,
                 pointB: Point2d,
                 pointC: Point2d,
-                colorA: NSColor,
-                colorB: NSColor? = nil,
-                colorC: NSColor? = nil) {
+                colorA: CIColor,
+                colorB: CIColor? = nil,
+                colorC: CIColor? = nil) {
         super.init(objectPosition: position, worldSize: size)
 
         tPointA = pointA + position
@@ -75,7 +75,7 @@ public class Triangle: Object2D, ObjectDrawProtocol {
                     // Gouraud interpolating
                     let interpColor = GouraudInterpolate(at: Point2d(x: Double(j), y: tPointA.y + Double(i)),
                                                          pointA: tPointA, pointB: tPointB, pointC: tPointC,
-                                                         nsColorA: tColorA, nsColorB: tColorB, nsColorC: tColorC)
+                                                         colorA: tColorA, colorB: tColorB, colorC: tColorC)
                     putPixel(pixels: &pixels, x: j, y: Int(tPointA.y) + i, size: worldSize, target: color2Pixel(color: interpColor))
                 }
             }

@@ -4,22 +4,22 @@ import CoreGraphics
 public class SRCanvas: NSImageView {
     public var imageSize: CGSize!
     private var imageBuffer: [Pixel]!
+    public var cameraPos: Point3d = Point3d(x: 5,y: 5, z: 5)
 
     private var objects2D: [Object2D] = []
     private var objects3D: [Object3D] = []
 
-    public init(size canvasSize: CGSize = defaultSize, color rawBgColor: NSColor = defaultColor) {
+    public init(size canvasSize: CGSize = defaultSize, color bgColor: CIColor = defaultColor) {
         // use NSView as a Canvas
         super.init(frame: NSRect(origin: .zero, size: canvasSize))
 
         imageSize = canvasSize
 
-        let ciColor = CIColor(color: rawBgColor)!
 
-        let bgPixel = Pixel(a: UInt8(ciColor.alpha * 255),
-                            r: UInt8(ciColor.red * 255),
-                            g: UInt8(ciColor.green * 255),
-                            b: UInt8(ciColor.blue * 255))
+        let bgPixel = Pixel(a: UInt8(bgColor.alpha * 255),
+                            r: UInt8(bgColor.red * 255),
+                            g: UInt8(bgColor.green * 255),
+                            b: UInt8(bgColor.blue * 255))
 
         imageBuffer = [Pixel](repeating: bgPixel, count: Int(canvasSize.width * canvasSize.height))
     }

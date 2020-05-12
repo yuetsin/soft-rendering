@@ -16,17 +16,16 @@ public struct Pixel {
 }
 
 @inlinable
-public func color2Pixel(color: NSColor) -> Pixel {
-    let ciColor = CIColor(color: color)!
-    return Pixel(a: UInt8(ciColor.alpha * 255),
-                 r: UInt8(ciColor.red * 255),
-                 g: UInt8(ciColor.green * 255),
-                 b: UInt8(ciColor.blue * 255))
+public func color2Pixel(color: CIColor) -> Pixel {
+    return Pixel(a: UInt8(color.alpha * 255),
+                 r: UInt8(color.red * 255),
+                 g: UInt8(color.green * 255),
+                 b: UInt8(color.blue * 255))
 }
 
 @inlinable
-public func pixel2Color(pixel: Pixel) -> NSColor {
-    NSColor(red: CGFloat(pixel.r) / 255.0,
+public func pixel2Color(pixel: Pixel) -> CIColor {
+    return CIColor(red: CGFloat(pixel.r) / 255.0,
             green: CGFloat(pixel.g) / 255.0,
             blue: CGFloat(pixel.b) / 255.0,
             alpha: CGFloat(pixel.a) / 255.0)
