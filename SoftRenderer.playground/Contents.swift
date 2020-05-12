@@ -19,12 +19,11 @@ let triangle = Triangle(objectPosition: Point2d(x: 30, y: 50),
                         pointA: Point2d(x: 0, y: 0),
                         pointB: Point2d(x: 100, y: 30),
                         pointC: Point2d(x: 50, y: 140),
-                        colorA: NSColor.red)
+                        colorA: NSColor.red,
+                        colorB: NSColor.green,
+                        colorC: NSColor.blue)
 
 canvas.drawObject(object: triangle)
 
 
 canvas.render()
-
-
-
