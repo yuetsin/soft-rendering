@@ -15,6 +15,14 @@ public class Vector3D<F: FloatingPoint>: ScreenPoint<F>, Equatable {
         super.init(.zero, .zero)
     }
     
+    public func toVector3d() -> Vector3d {
+        return Vector3d(x as! Double, y as! Double, z as! Double)
+    }
+    
+    public func toZoo() -> Vector3D<F> {
+        return Vector3D<F>(x, y, 1 / z)
+    }
+    
     @inlinable
     public func magnitude() -> F {
         return sqrt(x * x + y * y + z * z)

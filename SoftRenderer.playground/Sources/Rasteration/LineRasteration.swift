@@ -8,8 +8,11 @@ public func rasterize<F: FloatingPoint>(canvasWidth: F, canvasHeight: F, _ lineB
     let flatEndPos = Vector2D<F>(lineEndPos.x, lineEndPos.y)
     rasterize(canvasWidth: canvasWidth, canvasHeight: canvasHeight, flatBeginPos, flatEndPos,
               handler: { p2i, interp in
-                let z = interp.u * z0 + interp.v * z1
-                  handler(RenderPoint(p2i.x, p2i.y, z), interp)
+                var z = interp.u * (1 / z0)
+                z += interp.v * (1 / z1)
+                z = 1 / z
+                
+                handler(RenderPoint(p2i.x, p2i.y, z), interp)
     })
 }
 
