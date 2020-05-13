@@ -7,57 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A0BCF91246B8D9D0042AB0B /* LineRasteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF73246B8D9D0042AB0B /* LineRasteration.swift */; };
-		8A0BCF92246B8D9D0042AB0B /* FragmentRasteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF74246B8D9D0042AB0B /* FragmentRasteration.swift */; };
-		8A0BCF93246B8D9D0042AB0B /* ObjectDrawProtocol2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF76246B8D9D0042AB0B /* ObjectDrawProtocol2D.swift */; };
-		8A0BCF94246B8D9D0042AB0B /* ObjectDrawProtocol3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF77246B8D9D0042AB0B /* ObjectDrawProtocol3D.swift */; };
-		8A0BCF95246B8D9D0042AB0B /* Fragment3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF79246B8D9D0042AB0B /* Fragment3D.swift */; };
-		8A0BCF96246B8D9D0042AB0B /* Line3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF7A246B8D9D0042AB0B /* Line3D.swift */; };
-		8A0BCF97246B8D9D0042AB0B /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF7B246B8D9D0042AB0B /* Light.swift */; };
-		8A0BCF98246B8D9D0042AB0B /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF7C246B8D9D0042AB0B /* Camera.swift */; };
-		8A0BCF99246B8D9D0042AB0B /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF7E246B8D9D0042AB0B /* Random.swift */; };
-		8A0BCF9A246B8D9D0042AB0B /* Normalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF7F246B8D9D0042AB0B /* Normalize.swift */; };
-		8A0BCF9B246B8D9D0042AB0B /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF81246B8D9D0042AB0B /* Consts.swift */; };
-		8A0BCF9C246B8D9D0042AB0B /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF82246B8D9D0042AB0B /* Canvas.swift */; };
-		8A0BCF9D246B8D9D0042AB0B /* Line2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF84246B8D9D0042AB0B /* Line2D.swift */; };
-		8A0BCF9E246B8D9D0042AB0B /* Fragment2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF85246B8D9D0042AB0B /* Fragment2D.swift */; };
-		8A0BCF9F246B8D9D0042AB0B /* Point2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF87246B8D9D0042AB0B /* Point2D.swift */; };
-		8A0BCFA0246B8D9D0042AB0B /* ScreenPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF88246B8D9D0042AB0B /* ScreenPoint.swift */; };
-		8A0BCFA1246B8D9D0042AB0B /* Point3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF89246B8D9D0042AB0B /* Point3D.swift */; };
-		8A0BCFA2246B8D9D0042AB0B /* FragmentInterpolate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF8B246B8D9D0042AB0B /* FragmentInterpolate.swift */; };
-		8A0BCFA3246B8D9D0042AB0B /* LinearInterpolate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF8C246B8D9D0042AB0B /* LinearInterpolate.swift */; };
-		8A0BCFA4246B8D9D0042AB0B /* ColorInterpolate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF8D246B8D9D0042AB0B /* ColorInterpolate.swift */; };
-		8A0BCFA5246B8D9D0042AB0B /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF8F246B8D9D0042AB0B /* Pixel.swift */; };
-		8A0BCFA6246B8D9D0042AB0B /* BitmapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0BCF90246B8D9D0042AB0B /* BitmapHelper.swift */; };
 		8A6D7161246A2F6A003CA46C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6D7160246A2F6A003CA46C /* AppDelegate.swift */; };
 		8A6D7163246A2F6A003CA46C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6D7162246A2F6A003CA46C /* ViewController.swift */; };
 		8A6D7165246A2F6A003CA46C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A6D7164246A2F6A003CA46C /* Assets.xcassets */; };
 		8A6D7168246A2F6A003CA46C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A6D7166246A2F6A003CA46C /* Main.storyboard */; };
+		8A72CF31246BAEBB004E153F /* LineRasteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF10246BAEBB004E153F /* LineRasteration.swift */; };
+		8A72CF32246BAEBB004E153F /* FragmentRasteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF11246BAEBB004E153F /* FragmentRasteration.swift */; };
+		8A72CF33246BAEBB004E153F /* ObjectDrawProtocol2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF13246BAEBB004E153F /* ObjectDrawProtocol2D.swift */; };
+		8A72CF34246BAEBB004E153F /* ObjectDrawProtocol3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF14246BAEBB004E153F /* ObjectDrawProtocol3D.swift */; };
+		8A72CF35246BAEBB004E153F /* TextureFragment3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF16246BAEBB004E153F /* TextureFragment3D.swift */; };
+		8A72CF36246BAEBB004E153F /* Fragment3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF17246BAEBB004E153F /* Fragment3D.swift */; };
+		8A72CF37246BAEBB004E153F /* Line3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF18246BAEBB004E153F /* Line3D.swift */; };
+		8A72CF38246BAEBB004E153F /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF19246BAEBB004E153F /* Light.swift */; };
+		8A72CF39246BAEBB004E153F /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF1A246BAEBB004E153F /* Camera.swift */; };
+		8A72CF3A246BAEBB004E153F /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF1C246BAEBB004E153F /* Random.swift */; };
+		8A72CF3B246BAEBB004E153F /* Normalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF1D246BAEBB004E153F /* Normalize.swift */; };
+		8A72CF3C246BAEBB004E153F /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF1F246BAEBB004E153F /* Consts.swift */; };
+		8A72CF3D246BAEBB004E153F /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF20246BAEBB004E153F /* Canvas.swift */; };
+		8A72CF3E246BAEBB004E153F /* Line2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF22246BAEBB004E153F /* Line2D.swift */; };
+		8A72CF3F246BAEBB004E153F /* Fragment2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF23246BAEBB004E153F /* Fragment2D.swift */; };
+		8A72CF40246BAEBB004E153F /* Point2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF25246BAEBB004E153F /* Point2D.swift */; };
+		8A72CF41246BAEBB004E153F /* ScreenPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF26246BAEBB004E153F /* ScreenPoint.swift */; };
+		8A72CF42246BAEBB004E153F /* TextureCoords2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF27246BAEBB004E153F /* TextureCoords2D.swift */; };
+		8A72CF43246BAEBB004E153F /* Point3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF28246BAEBB004E153F /* Point3D.swift */; };
+		8A72CF44246BAEBB004E153F /* FragmentInterpolate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF2A246BAEBB004E153F /* FragmentInterpolate.swift */; };
+		8A72CF45246BAEBB004E153F /* LinearInterpolate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF2B246BAEBB004E153F /* LinearInterpolate.swift */; };
+		8A72CF46246BAEBB004E153F /* ColorInterpolate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF2C246BAEBB004E153F /* ColorInterpolate.swift */; };
+		8A72CF47246BAEBB004E153F /* TextureInterpolate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF2D246BAEBB004E153F /* TextureInterpolate.swift */; };
+		8A72CF48246BAEBB004E153F /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF2F246BAEBB004E153F /* Pixel.swift */; };
+		8A72CF49246BAEBB004E153F /* BitmapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF30246BAEBB004E153F /* BitmapHelper.swift */; };
+		8A72CF4B246BB127004E153F /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A72CF4A246BB127004E153F /* grass.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8A0BCF73246B8D9D0042AB0B /* LineRasteration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineRasteration.swift; sourceTree = "<group>"; };
-		8A0BCF74246B8D9D0042AB0B /* FragmentRasteration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FragmentRasteration.swift; sourceTree = "<group>"; };
-		8A0BCF76246B8D9D0042AB0B /* ObjectDrawProtocol2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectDrawProtocol2D.swift; sourceTree = "<group>"; };
-		8A0BCF77246B8D9D0042AB0B /* ObjectDrawProtocol3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectDrawProtocol3D.swift; sourceTree = "<group>"; };
-		8A0BCF79246B8D9D0042AB0B /* Fragment3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fragment3D.swift; sourceTree = "<group>"; };
-		8A0BCF7A246B8D9D0042AB0B /* Line3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line3D.swift; sourceTree = "<group>"; };
-		8A0BCF7B246B8D9D0042AB0B /* Light.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
-		8A0BCF7C246B8D9D0042AB0B /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
-		8A0BCF7E246B8D9D0042AB0B /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
-		8A0BCF7F246B8D9D0042AB0B /* Normalize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Normalize.swift; sourceTree = "<group>"; };
-		8A0BCF81246B8D9D0042AB0B /* Consts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
-		8A0BCF82246B8D9D0042AB0B /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
-		8A0BCF84246B8D9D0042AB0B /* Line2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line2D.swift; sourceTree = "<group>"; };
-		8A0BCF85246B8D9D0042AB0B /* Fragment2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fragment2D.swift; sourceTree = "<group>"; };
-		8A0BCF87246B8D9D0042AB0B /* Point2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point2D.swift; sourceTree = "<group>"; };
-		8A0BCF88246B8D9D0042AB0B /* ScreenPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenPoint.swift; sourceTree = "<group>"; };
-		8A0BCF89246B8D9D0042AB0B /* Point3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point3D.swift; sourceTree = "<group>"; };
-		8A0BCF8B246B8D9D0042AB0B /* FragmentInterpolate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FragmentInterpolate.swift; sourceTree = "<group>"; };
-		8A0BCF8C246B8D9D0042AB0B /* LinearInterpolate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearInterpolate.swift; sourceTree = "<group>"; };
-		8A0BCF8D246B8D9D0042AB0B /* ColorInterpolate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorInterpolate.swift; sourceTree = "<group>"; };
-		8A0BCF8F246B8D9D0042AB0B /* Pixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
-		8A0BCF90246B8D9D0042AB0B /* BitmapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitmapHelper.swift; sourceTree = "<group>"; };
 		8A6D715D246A2F6A003CA46C /* dummy-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dummy-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A6D7160246A2F6A003CA46C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A6D7162246A2F6A003CA46C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +47,32 @@
 		8A6D7167246A2F6A003CA46C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A6D7169246A2F6A003CA46C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A6D716A246A2F6A003CA46C /* dummy_app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = dummy_app.entitlements; sourceTree = "<group>"; };
+		8A72CF10246BAEBB004E153F /* LineRasteration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineRasteration.swift; sourceTree = "<group>"; };
+		8A72CF11246BAEBB004E153F /* FragmentRasteration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FragmentRasteration.swift; sourceTree = "<group>"; };
+		8A72CF13246BAEBB004E153F /* ObjectDrawProtocol2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectDrawProtocol2D.swift; sourceTree = "<group>"; };
+		8A72CF14246BAEBB004E153F /* ObjectDrawProtocol3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectDrawProtocol3D.swift; sourceTree = "<group>"; };
+		8A72CF16246BAEBB004E153F /* TextureFragment3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureFragment3D.swift; sourceTree = "<group>"; };
+		8A72CF17246BAEBB004E153F /* Fragment3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fragment3D.swift; sourceTree = "<group>"; };
+		8A72CF18246BAEBB004E153F /* Line3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line3D.swift; sourceTree = "<group>"; };
+		8A72CF19246BAEBB004E153F /* Light.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		8A72CF1A246BAEBB004E153F /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		8A72CF1C246BAEBB004E153F /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		8A72CF1D246BAEBB004E153F /* Normalize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Normalize.swift; sourceTree = "<group>"; };
+		8A72CF1F246BAEBB004E153F /* Consts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
+		8A72CF20246BAEBB004E153F /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		8A72CF22246BAEBB004E153F /* Line2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line2D.swift; sourceTree = "<group>"; };
+		8A72CF23246BAEBB004E153F /* Fragment2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fragment2D.swift; sourceTree = "<group>"; };
+		8A72CF25246BAEBB004E153F /* Point2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point2D.swift; sourceTree = "<group>"; };
+		8A72CF26246BAEBB004E153F /* ScreenPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenPoint.swift; sourceTree = "<group>"; };
+		8A72CF27246BAEBB004E153F /* TextureCoords2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureCoords2D.swift; sourceTree = "<group>"; };
+		8A72CF28246BAEBB004E153F /* Point3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point3D.swift; sourceTree = "<group>"; };
+		8A72CF2A246BAEBB004E153F /* FragmentInterpolate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FragmentInterpolate.swift; sourceTree = "<group>"; };
+		8A72CF2B246BAEBB004E153F /* LinearInterpolate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearInterpolate.swift; sourceTree = "<group>"; };
+		8A72CF2C246BAEBB004E153F /* ColorInterpolate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorInterpolate.swift; sourceTree = "<group>"; };
+		8A72CF2D246BAEBB004E153F /* TextureInterpolate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureInterpolate.swift; sourceTree = "<group>"; };
+		8A72CF2F246BAEBB004E153F /* Pixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
+		8A72CF30246BAEBB004E153F /* BitmapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitmapHelper.swift; sourceTree = "<group>"; };
+		8A72CF4A246BB127004E153F /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,112 +86,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8A0BCF71246B8D9D0042AB0B /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				8A0BCF72246B8D9D0042AB0B /* Rasteration */,
-				8A0BCF75246B8D9D0042AB0B /* ObjectBase */,
-				8A0BCF78246B8D9D0042AB0B /* Objects3D */,
-				8A0BCF7D246B8D9D0042AB0B /* Utils */,
-				8A0BCF80246B8D9D0042AB0B /* Canvas */,
-				8A0BCF83246B8D9D0042AB0B /* Objects2D */,
-				8A0BCF86246B8D9D0042AB0B /* Points */,
-				8A0BCF8A246B8D9D0042AB0B /* Interpolate */,
-				8A0BCF8E246B8D9D0042AB0B /* Pixels */,
-			);
-			name = Sources;
-			path = ../SoftRenderer.playground/Sources;
-			sourceTree = "<group>";
-		};
-		8A0BCF72246B8D9D0042AB0B /* Rasteration */ = {
-			isa = PBXGroup;
-			children = (
-				8A0BCF73246B8D9D0042AB0B /* LineRasteration.swift */,
-				8A0BCF74246B8D9D0042AB0B /* FragmentRasteration.swift */,
-			);
-			path = Rasteration;
-			sourceTree = "<group>";
-		};
-		8A0BCF75246B8D9D0042AB0B /* ObjectBase */ = {
-			isa = PBXGroup;
-			children = (
-				8A0BCF76246B8D9D0042AB0B /* ObjectDrawProtocol2D.swift */,
-				8A0BCF77246B8D9D0042AB0B /* ObjectDrawProtocol3D.swift */,
-			);
-			path = ObjectBase;
-			sourceTree = "<group>";
-		};
-		8A0BCF78246B8D9D0042AB0B /* Objects3D */ = {
-			isa = PBXGroup;
-			children = (
-				8A0BCF79246B8D9D0042AB0B /* Fragment3D.swift */,
-				8A0BCF7A246B8D9D0042AB0B /* Line3D.swift */,
-				8A0BCF7B246B8D9D0042AB0B /* Light.swift */,
-				8A0BCF7C246B8D9D0042AB0B /* Camera.swift */,
-			);
-			path = Objects3D;
-			sourceTree = "<group>";
-		};
-		8A0BCF7D246B8D9D0042AB0B /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				8A0BCF7E246B8D9D0042AB0B /* Random.swift */,
-				8A0BCF7F246B8D9D0042AB0B /* Normalize.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		8A0BCF80246B8D9D0042AB0B /* Canvas */ = {
-			isa = PBXGroup;
-			children = (
-				8A0BCF81246B8D9D0042AB0B /* Consts.swift */,
-				8A0BCF82246B8D9D0042AB0B /* Canvas.swift */,
-			);
-			path = Canvas;
-			sourceTree = "<group>";
-		};
-		8A0BCF83246B8D9D0042AB0B /* Objects2D */ = {
-			isa = PBXGroup;
-			children = (
-				8A0BCF84246B8D9D0042AB0B /* Line2D.swift */,
-				8A0BCF85246B8D9D0042AB0B /* Fragment2D.swift */,
-			);
-			path = Objects2D;
-			sourceTree = "<group>";
-		};
-		8A0BCF86246B8D9D0042AB0B /* Points */ = {
-			isa = PBXGroup;
-			children = (
-				8A0BCF87246B8D9D0042AB0B /* Point2D.swift */,
-				8A0BCF88246B8D9D0042AB0B /* ScreenPoint.swift */,
-				8A0BCF89246B8D9D0042AB0B /* Point3D.swift */,
-			);
-			path = Points;
-			sourceTree = "<group>";
-		};
-		8A0BCF8A246B8D9D0042AB0B /* Interpolate */ = {
-			isa = PBXGroup;
-			children = (
-				8A0BCF8B246B8D9D0042AB0B /* FragmentInterpolate.swift */,
-				8A0BCF8C246B8D9D0042AB0B /* LinearInterpolate.swift */,
-				8A0BCF8D246B8D9D0042AB0B /* ColorInterpolate.swift */,
-			);
-			path = Interpolate;
-			sourceTree = "<group>";
-		};
-		8A0BCF8E246B8D9D0042AB0B /* Pixels */ = {
-			isa = PBXGroup;
-			children = (
-				8A0BCF8F246B8D9D0042AB0B /* Pixel.swift */,
-				8A0BCF90246B8D9D0042AB0B /* BitmapHelper.swift */,
-			);
-			path = Pixels;
-			sourceTree = "<group>";
-		};
 		8A6D7154246A2F6A003CA46C = {
 			isa = PBXGroup;
 			children = (
-				8A0BCF71246B8D9D0042AB0B /* Sources */,
+				8A72CF4A246BB127004E153F /* grass.png */,
+				8A72CF0E246BAEBB004E153F /* Sources */,
 				8A6D715F246A2F6A003CA46C /* dummy-app */,
 				8A6D715E246A2F6A003CA46C /* Products */,
 			);
@@ -208,6 +115,111 @@
 				8A6D716A246A2F6A003CA46C /* dummy_app.entitlements */,
 			);
 			path = "dummy-app";
+			sourceTree = "<group>";
+		};
+		8A72CF0E246BAEBB004E153F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8A72CF0F246BAEBB004E153F /* Rasteration */,
+				8A72CF12246BAEBB004E153F /* ObjectBase */,
+				8A72CF15246BAEBB004E153F /* Objects3D */,
+				8A72CF1B246BAEBB004E153F /* Utils */,
+				8A72CF1E246BAEBB004E153F /* Canvas */,
+				8A72CF21246BAEBB004E153F /* Objects2D */,
+				8A72CF24246BAEBB004E153F /* Points */,
+				8A72CF29246BAEBB004E153F /* Interpolate */,
+				8A72CF2E246BAEBB004E153F /* Pixels */,
+			);
+			name = Sources;
+			path = ../SoftRenderer.playground/Sources;
+			sourceTree = "<group>";
+		};
+		8A72CF0F246BAEBB004E153F /* Rasteration */ = {
+			isa = PBXGroup;
+			children = (
+				8A72CF10246BAEBB004E153F /* LineRasteration.swift */,
+				8A72CF11246BAEBB004E153F /* FragmentRasteration.swift */,
+			);
+			path = Rasteration;
+			sourceTree = "<group>";
+		};
+		8A72CF12246BAEBB004E153F /* ObjectBase */ = {
+			isa = PBXGroup;
+			children = (
+				8A72CF13246BAEBB004E153F /* ObjectDrawProtocol2D.swift */,
+				8A72CF14246BAEBB004E153F /* ObjectDrawProtocol3D.swift */,
+			);
+			path = ObjectBase;
+			sourceTree = "<group>";
+		};
+		8A72CF15246BAEBB004E153F /* Objects3D */ = {
+			isa = PBXGroup;
+			children = (
+				8A72CF16246BAEBB004E153F /* TextureFragment3D.swift */,
+				8A72CF17246BAEBB004E153F /* Fragment3D.swift */,
+				8A72CF18246BAEBB004E153F /* Line3D.swift */,
+				8A72CF19246BAEBB004E153F /* Light.swift */,
+				8A72CF1A246BAEBB004E153F /* Camera.swift */,
+			);
+			path = Objects3D;
+			sourceTree = "<group>";
+		};
+		8A72CF1B246BAEBB004E153F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8A72CF1C246BAEBB004E153F /* Random.swift */,
+				8A72CF1D246BAEBB004E153F /* Normalize.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8A72CF1E246BAEBB004E153F /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				8A72CF1F246BAEBB004E153F /* Consts.swift */,
+				8A72CF20246BAEBB004E153F /* Canvas.swift */,
+			);
+			path = Canvas;
+			sourceTree = "<group>";
+		};
+		8A72CF21246BAEBB004E153F /* Objects2D */ = {
+			isa = PBXGroup;
+			children = (
+				8A72CF22246BAEBB004E153F /* Line2D.swift */,
+				8A72CF23246BAEBB004E153F /* Fragment2D.swift */,
+			);
+			path = Objects2D;
+			sourceTree = "<group>";
+		};
+		8A72CF24246BAEBB004E153F /* Points */ = {
+			isa = PBXGroup;
+			children = (
+				8A72CF25246BAEBB004E153F /* Point2D.swift */,
+				8A72CF26246BAEBB004E153F /* ScreenPoint.swift */,
+				8A72CF27246BAEBB004E153F /* TextureCoords2D.swift */,
+				8A72CF28246BAEBB004E153F /* Point3D.swift */,
+			);
+			path = Points;
+			sourceTree = "<group>";
+		};
+		8A72CF29246BAEBB004E153F /* Interpolate */ = {
+			isa = PBXGroup;
+			children = (
+				8A72CF2A246BAEBB004E153F /* FragmentInterpolate.swift */,
+				8A72CF2B246BAEBB004E153F /* LinearInterpolate.swift */,
+				8A72CF2C246BAEBB004E153F /* ColorInterpolate.swift */,
+				8A72CF2D246BAEBB004E153F /* TextureInterpolate.swift */,
+			);
+			path = Interpolate;
+			sourceTree = "<group>";
+		};
+		8A72CF2E246BAEBB004E153F /* Pixels */ = {
+			isa = PBXGroup;
+			children = (
+				8A72CF2F246BAEBB004E153F /* Pixel.swift */,
+				8A72CF30246BAEBB004E153F /* BitmapHelper.swift */,
+			);
+			path = Pixels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A72CF4B246BB127004E153F /* grass.png in Resources */,
 				8A6D7165246A2F6A003CA46C /* Assets.xcassets in Resources */,
 				8A6D7168246A2F6A003CA46C /* Main.storyboard in Resources */,
 			);
@@ -280,30 +293,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A0BCFA1246B8D9D0042AB0B /* Point3D.swift in Sources */,
-				8A0BCF97246B8D9D0042AB0B /* Light.swift in Sources */,
-				8A0BCF92246B8D9D0042AB0B /* FragmentRasteration.swift in Sources */,
-				8A0BCF91246B8D9D0042AB0B /* LineRasteration.swift in Sources */,
-				8A0BCF9B246B8D9D0042AB0B /* Consts.swift in Sources */,
+				8A72CF39246BAEBB004E153F /* Camera.swift in Sources */,
+				8A72CF32246BAEBB004E153F /* FragmentRasteration.swift in Sources */,
+				8A72CF31246BAEBB004E153F /* LineRasteration.swift in Sources */,
+				8A72CF44246BAEBB004E153F /* FragmentInterpolate.swift in Sources */,
+				8A72CF48246BAEBB004E153F /* Pixel.swift in Sources */,
 				8A6D7163246A2F6A003CA46C /* ViewController.swift in Sources */,
-				8A0BCF9E246B8D9D0042AB0B /* Fragment2D.swift in Sources */,
-				8A0BCF93246B8D9D0042AB0B /* ObjectDrawProtocol2D.swift in Sources */,
-				8A0BCF9F246B8D9D0042AB0B /* Point2D.swift in Sources */,
-				8A0BCFA4246B8D9D0042AB0B /* ColorInterpolate.swift in Sources */,
+				8A72CF33246BAEBB004E153F /* ObjectDrawProtocol2D.swift in Sources */,
+				8A72CF42246BAEBB004E153F /* TextureCoords2D.swift in Sources */,
+				8A72CF46246BAEBB004E153F /* ColorInterpolate.swift in Sources */,
+				8A72CF43246BAEBB004E153F /* Point3D.swift in Sources */,
+				8A72CF3E246BAEBB004E153F /* Line2D.swift in Sources */,
 				8A6D7161246A2F6A003CA46C /* AppDelegate.swift in Sources */,
-				8A0BCF9C246B8D9D0042AB0B /* Canvas.swift in Sources */,
-				8A0BCF98246B8D9D0042AB0B /* Camera.swift in Sources */,
-				8A0BCF94246B8D9D0042AB0B /* ObjectDrawProtocol3D.swift in Sources */,
-				8A0BCFA0246B8D9D0042AB0B /* ScreenPoint.swift in Sources */,
-				8A0BCFA5246B8D9D0042AB0B /* Pixel.swift in Sources */,
-				8A0BCFA3246B8D9D0042AB0B /* LinearInterpolate.swift in Sources */,
-				8A0BCF96246B8D9D0042AB0B /* Line3D.swift in Sources */,
-				8A0BCFA6246B8D9D0042AB0B /* BitmapHelper.swift in Sources */,
-				8A0BCFA2246B8D9D0042AB0B /* FragmentInterpolate.swift in Sources */,
-				8A0BCF9D246B8D9D0042AB0B /* Line2D.swift in Sources */,
-				8A0BCF95246B8D9D0042AB0B /* Fragment3D.swift in Sources */,
-				8A0BCF99246B8D9D0042AB0B /* Random.swift in Sources */,
-				8A0BCF9A246B8D9D0042AB0B /* Normalize.swift in Sources */,
+				8A72CF47246BAEBB004E153F /* TextureInterpolate.swift in Sources */,
+				8A72CF35246BAEBB004E153F /* TextureFragment3D.swift in Sources */,
+				8A72CF41246BAEBB004E153F /* ScreenPoint.swift in Sources */,
+				8A72CF3F246BAEBB004E153F /* Fragment2D.swift in Sources */,
+				8A72CF38246BAEBB004E153F /* Light.swift in Sources */,
+				8A72CF40246BAEBB004E153F /* Point2D.swift in Sources */,
+				8A72CF49246BAEBB004E153F /* BitmapHelper.swift in Sources */,
+				8A72CF3D246BAEBB004E153F /* Canvas.swift in Sources */,
+				8A72CF3A246BAEBB004E153F /* Random.swift in Sources */,
+				8A72CF36246BAEBB004E153F /* Fragment3D.swift in Sources */,
+				8A72CF45246BAEBB004E153F /* LinearInterpolate.swift in Sources */,
+				8A72CF34246BAEBB004E153F /* ObjectDrawProtocol3D.swift in Sources */,
+				8A72CF3C246BAEBB004E153F /* Consts.swift in Sources */,
+				8A72CF3B246BAEBB004E153F /* Normalize.swift in Sources */,
+				8A72CF37246BAEBB004E153F /* Line3D.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

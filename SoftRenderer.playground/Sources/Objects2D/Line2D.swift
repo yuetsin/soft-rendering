@@ -31,7 +31,7 @@ public class Line2D: ObjectDrawProtocol2D {
             if singleColor {
                 pixel = color2Pixel(color: lineBeginColor)
             } else {
-                pixel = color2Pixel(color: ColorInterpolate(since: lineBeginColor, till: lineEndColor, interp: interp))
+                pixel = color2Pixel(color: LinearColorInterpolate(since: lineBeginColor, till: lineEndColor, interp: interp))
             }
             
             putPixel(pixels: &pixels, point: point, size: canvasSize, target: pixel)
