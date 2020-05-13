@@ -27,54 +27,16 @@ public class Fragment2D: ObjectDrawProtocol2D {
         if tPointA.y == tPointB.y && tPointA.y == tPointC.y {
             return
         }
-        if tPointA.y > tPointB.y {
-            (tPointA, tPointB) = (tPointB, tPointA)
-        }
-        if tPointA.y > tPointC.y {
-            (tPointA, tPointC) = (tPointC, tPointA)
-        }
-        if tPointB.y > tPointC.y {
-            (tPointB, tPointC) = (tPointC, tPointB)
-        }
-        let total_height = Int(tPointC.y - tPointA.y)
-        for i in 0 ..< total_height {
-            var A, B: Point2d!
-            var segment_height, alpha, beta: Double!
-            var offset: Int!
-
-            let second_half = Double(i) > tPointB.y - tPointA.y || (tPointB.y == tPointA.y)
-
-            if second_half {
-                segment_height = tPointC.y - tPointB.y
-                offset = Int(tPointB.y - tPointA.y)
+        
+        rasterize(pA: tPointA, pB: tPointB, pC: tPointC) { point, interp in
+            var pixel: Pixel!
+            if singleColor {
+                pixel = color2Pixel(color: tColorA)
             } else {
-                segment_height = tPointB.y - tPointA.y
-                offset = 0
+                let color = GouraudInterpolate(colorA: tColorA, colorB: tColorB, colorC: tColorC, interp: interp)
+                pixel = color2Pixel(color: color)
             }
-            alpha = Double(i) / Double(total_height)
-            beta = Double(i - offset) / segment_height
-            A = tPointA + (tPointC - tPointA) * alpha
-            if second_half {
-                B = tPointB + (tPointC - tPointB) * beta
-            } else {
-                B = tPointA + (tPointB - tPointA) * beta
-            }
-            if A.x > B.x {
-                (A, B) = (B, A)
-            }
-
-            for j in Int(A.x) ... Int(B.x) {
-                if singleColor {
-                    // single color is fine
-                    putPixel(pixels: &pixels, x: j, y: Int(tPointA.y) + i, size: canvasSize, target: color2Pixel(color: tColorA))
-                } else {
-                    // Gouraud interpolating
-                    let interpColor = GouraudInterpolate(at: Point2d(x: Double(j), y: tPointA.y + Double(i)),
-                                                         pointA: tPointA, pointB: tPointB, pointC: tPointC,
-                                                         colorA: tColorA, colorB: tColorB, colorC: tColorC)
-                    putPixel(pixels: &pixels, x: j, y: Int(tPointA.y) + i, size: canvasSize, target: color2Pixel(color: interpColor))
-                }
-            }
+            putPixel(pixels: &pixels, point: point, size: canvasSize, target: pixel)
         }
     }
 }

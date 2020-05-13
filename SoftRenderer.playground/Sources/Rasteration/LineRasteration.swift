@@ -1,28 +1,20 @@
 import Cocoa
 
 // Bresenham's approach
-
-@inlinable
 public func rasterize<F: FloatingPoint>(_ lineBeginPos: Point3D<F>, _ lineEndPos: Point3D<F>,
-                                        _ lineBeginColor: CIColor, _ lineEndColor: CIColor,
-                                        handler: (Int, Int, Double, Double, Pixel) -> Void) {
-    let z0 = Int(lineBeginPos.z as! Double), z1 = Int(lineEndPos.z as! Double)
-    
-    let flatBeginPos = Point2D<F>(x: lineBeginPos.x, y: lineBeginPos.y)
-    let flatEndPos = Point2D<F>(x: lineEndPos.x, y: lineEndPos.y)
+                                        handler: (Point3i, LinearInterpolate<Double>) -> Void) {
+    let z0 = lineBeginPos.z as! Double, z1 = lineEndPos.z as! Double
+    let flatBeginPos = Point2D<F>(lineBeginPos.x, lineBeginPos.y)
+    let flatEndPos = Point2D<F>(lineEndPos.x, lineEndPos.y)
     rasterize(flatBeginPos, flatEndPos,
-              lineBeginColor, lineEndColor, handler: { x, y, progress, pixel in
-                let z = Double(z1 - z0) * progress + Double(z0)
-                handler(x, y, z, progress, pixel)
+              handler: { p2i, interp in
+                let z = interp.u * z0 + interp.v * z1
+                  handler(Point3i(p2i.x, p2i.y, z), interp)
     })
 }
 
-@inlinable
 public func rasterize<F: FloatingPoint>(_ lineBeginPos: Point2D<F>, _ lineEndPos: Point2D<F>,
-                                        _ lineBeginColor: CIColor, _ lineEndColor: CIColor,
-                                        handler: (Int, Int, Double, Pixel) -> Void) {
-    let singleColor = lineBeginColor == lineEndColor
-
+                                        handler: (Point2i, LinearInterpolate<Double>) -> Void) {
     var x0 = Int(lineBeginPos.x as! Double)
     var y0 = Int(lineBeginPos.y as! Double)
     var x1 = Int(lineEndPos.x as! Double)
@@ -46,18 +38,12 @@ public func rasterize<F: FloatingPoint>(_ lineBeginPos: Point2D<F>, _ lineEndPos
     var error2 = 0
     var y = y0
 
-    var pixel = color2Pixel(color: lineBeginColor)
-
     for x in x0 ... x1 {
         let progress = Double(x - x0) / Double(dx)
-        if !singleColor {
-            pixel = color2Pixel(color: ColorInterpolate(since: lineBeginColor, till: lineEndColor, progress: CGFloat(progress)))
-        }
-
         if steep {
-            handler(y, x, progress, pixel)
+            handler(Point2i(y, x), LinearInterpolate<Double>(u: 1 - progress, v: progress))
         } else {
-            handler(x, y, progress, pixel)
+            handler(Point2i(x, y), LinearInterpolate<Double>(u: 1 - progress, v: progress))
         }
         error2 += derror2
         if error2 > dx {

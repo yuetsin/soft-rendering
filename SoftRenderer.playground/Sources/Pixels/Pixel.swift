@@ -48,6 +48,14 @@ public func putPixel(pixels: inout [Pixel], x: Int, y: Int, size: CGSize, target
 }
 
 @inlinable
+public func putPixel(pixels: inout [Pixel], point: Point2i, size: CGSize, target: Pixel) {
+    if point.x >= Int(size.width) || point.y >= Int(size.height) || point.x < 0 || point.y < 0 {
+        return
+    }
+    pixels[point.x + point.y * Int(size.width)] = target
+}
+
+@inlinable
 public func getZBuffer(zBuffer: inout [Double], x: Int, y: Int, size: CGSize) -> Double? {
     if x >= Int(size.width) || y >= Int(size.height) || x < 0 || y < 0 {
         return nil

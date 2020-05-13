@@ -18,7 +18,13 @@ class ViewController: NSViewController {
         let line = Line3D(beginPoint: randomPoint3d(size: canvasSize),
                           endPoint: randomPoint3d(size: canvasSize),
                           color: randomCIColor(), endColor: randomCIColor())
+
+        let fragment = Fragment3D(pointA: randomPoint3d(size: canvasSize),
+                                  pointB: randomPoint3d(size: canvasSize),
+                                  pointC: randomPoint3d(size: canvasSize),
+                                  colorA: randomCIColor())
         canvas.drawObject(object: line)
+        canvas.drawObject(object: fragment)
         canvas.resample()
     }
     
@@ -29,19 +35,19 @@ class ViewController: NSViewController {
         canvasSize = CGSize(width: view.frame.size.width, height: max(view.frame.size.height - 56, 0))
         canvas = SRCanvas(size: canvasSize, color: .clear)
 
-        let line = Line2D(beginPoint: Point2d(x: 10, y: 10),
-                        endPoint: Point2d(x: 200, y: 140), color: CIColor.red, endColor: CIColor.blue)
+        let line = Line2D(beginPoint: Point2d(10, 10),
+                          endPoint: Point2d(200, 140), color: CIColor.red, endColor: CIColor.blue)
 
         canvas.addObject(object: line)
         
-        let triangle = Fragment2D(pointA: Point2d(x: 0, y: 0),
-                                pointB: Point2d(x: 100, y: 30),
-                                pointC: Point2d(x: 50, y: 140),
+        let fragment = Fragment2D(pointA: Point2d(0, 0),
+                                  pointB: Point2d(100, 30),
+                                  pointC: Point2d(50, 140),
                                 colorA: CIColor.yellow,
                                 colorB: CIColor.magenta,
                                 colorC: CIColor.cyan)
         
-        canvas.addObject(object: triangle)
+        canvas.addObject(object: fragment)
         view.addSubview(canvas)
         
         canvas.render()
