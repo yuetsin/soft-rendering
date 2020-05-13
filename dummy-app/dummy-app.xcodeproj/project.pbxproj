@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A2ED3DE246BD74B00AA1CE9 /* Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2ED3DD246BD74B00AA1CE9 /* Transform.swift */; };
+		8A2ED3E0246BD99B00AA1CE9 /* CropCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2ED3DF246BD99B00AA1CE9 /* CropCheck.swift */; };
+		8A2ED3E2246BDC5600AA1CE9 /* PointTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2ED3E1246BDC5600AA1CE9 /* PointTransform.swift */; };
 		8A6D7161246A2F6A003CA46C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6D7160246A2F6A003CA46C /* AppDelegate.swift */; };
 		8A6D7163246A2F6A003CA46C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6D7162246A2F6A003CA46C /* ViewController.swift */; };
 		8A6D7165246A2F6A003CA46C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A6D7164246A2F6A003CA46C /* Assets.xcassets */; };
@@ -42,6 +45,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A2ED3DD246BD74B00AA1CE9 /* Transform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transform.swift; sourceTree = "<group>"; };
+		8A2ED3DF246BD99B00AA1CE9 /* CropCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropCheck.swift; sourceTree = "<group>"; };
+		8A2ED3E1246BDC5600AA1CE9 /* PointTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTransform.swift; sourceTree = "<group>"; };
 		8A6D715D246A2F6A003CA46C /* dummy-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dummy-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A6D7160246A2F6A003CA46C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A6D7162246A2F6A003CA46C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +96,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A2ED3DC246BD74B00AA1CE9 /* Projection */ = {
+			isa = PBXGroup;
+			children = (
+				8A2ED3DD246BD74B00AA1CE9 /* Transform.swift */,
+				8A2ED3DF246BD99B00AA1CE9 /* CropCheck.swift */,
+				8A2ED3E1246BDC5600AA1CE9 /* PointTransform.swift */,
+			);
+			path = Projection;
+			sourceTree = "<group>";
+		};
 		8A6D7154246A2F6A003CA46C = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +140,7 @@
 		8A72CF0E246BAEBB004E153F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				8A2ED3DC246BD74B00AA1CE9 /* Projection */,
 				8AE0BB75246BC27200CFB471 /* Matrix */,
 				8A72CF0F246BAEBB004E153F /* Rasteration */,
 				8A72CF12246BAEBB004E153F /* ObjectBase */,
@@ -328,11 +345,14 @@
 				8A72CF40246BAEBB004E153F /* Vector2D.swift in Sources */,
 				8A72CF49246BAEBB004E153F /* BitmapHelper.swift in Sources */,
 				8A72CF3D246BAEBB004E153F /* Canvas.swift in Sources */,
+				8A2ED3E2246BDC5600AA1CE9 /* PointTransform.swift in Sources */,
 				8A72CF3A246BAEBB004E153F /* Random.swift in Sources */,
+				8A2ED3DE246BD74B00AA1CE9 /* Transform.swift in Sources */,
 				8A72CF36246BAEBB004E153F /* Fragment3D.swift in Sources */,
 				8A72CF45246BAEBB004E153F /* LinearInterpolate.swift in Sources */,
 				8A72CF34246BAEBB004E153F /* ObjectDrawProtocol3D.swift in Sources */,
 				8A72CF3C246BAEBB004E153F /* Consts.swift in Sources */,
+				8A2ED3E0246BD99B00AA1CE9 /* CropCheck.swift in Sources */,
 				8A72CF3B246BAEBB004E153F /* Normalize.swift in Sources */,
 				8A72CF37246BAEBB004E153F /* Line3D.swift in Sources */,
 				8AE0BB79246BC74C00CFB471 /* Converter.swift in Sources */,

@@ -11,9 +11,9 @@ public let defaultSize = CGSize(width: 1024, height: 1024)
 public let defaultColor = CIColor.clear
 
 // camera default values
-public let defaultCameraPosition = Vector3d(2, 2, 2)
+public let defaultCameraPosition = Vector3d(20, 20, 20)
 public let defaultLookingAtPosition = Vector3d(0, 0, 0)
-public let defaultCamera = Camera(position: defaultCameraPosition, lookingAtPosition: defaultLookingAtPosition)
+public let defaultCamera = Camera(position: defaultCameraPosition, lookingAtPosition: defaultLookingAtPosition, upVector: Vector3d(0, 0, 1), cameraFov: 1.6, cameraAspect: 10, camZn: 10, camZf: 40)
 
 // light default values
 public let defaultLight = Light(color: CIColor.white, type: .ambient)

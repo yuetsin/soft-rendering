@@ -24,8 +24,13 @@ public class Fragment3D: ObjectDrawProtocol3D {
         singleColor = colorB == nil || colorC == nil
     }
 
-    public func drawOn(target pixels: inout [Pixel], canvasSize: CGSize, depthBuffer: inout [Double], lights: inout [Light], camera: Camera) {
-        rasterize(pA: tPointA, pB: tPointB, pC: tPointC, handler: { point, interp in
+    public func drawOn(target pixels: inout [Pixel], canvasSize: CGSize, depthBuffer: inout [Double], lights: inout [Light], camera: Camera<Double>) {
+        
+        let pA = transformPoint(point: tPointA, camera: camera, width: Double(canvasSize.width), height: Double(canvasSize.height))
+        let pB = transformPoint(point: tPointB, camera: camera, width: Double(canvasSize.width), height: Double(canvasSize.height))
+        let pC = transformPoint(point: tPointC, camera: camera, width: Double(canvasSize.width), height: Double(canvasSize.height))
+        
+        rasterize(canvasWidth: Double(canvasSize.width), canvasHeight: Double(canvasSize.height), pA: pA, pB: pB, pC: pC, handler: { point, interp in
             var pixel: Pixel!
 
             if getZBuffer(zBuffer: &depthBuffer, x: point.x, y: point.y, size: canvasSize) ?? -Double.infinity <= point.z {

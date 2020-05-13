@@ -9,9 +9,25 @@ public class Vector3D<F: FloatingPoint>: ScreenPoint<F>, Equatable {
         self.z = z
         super.init(x, y)
     }
+    
+    @inlinable
+    public func magnitude() -> F {
+        return sqrt(x * x + y * y + z * z)
+    }
+    
+    @inlinable
+    public func normalize() -> Vector3D<F> {
+        let scale = sqrt(x * x + y * y + z * z)
+        return Vector3D<F>(x / scale, y / scale, z / scale)
+    }
+    
+    @inlinable
+    public func crossMultiply(with right: Vector3D<F>) -> Vector3D<F> {
+        return Vector3D<F>(self.y * right.z - right.y * self.z, self.z * right.x - self.x * right.z, self.x * right.y - right.x * self.y)
+    }
 }
 
-public class Vector3i: Equatable {
+public class RenderPoint: Equatable {
     public var x: Int
     public var y: Int
     public var z: Double
@@ -22,7 +38,7 @@ public class Vector3i: Equatable {
         z = Z
     }
     
-    public static func ==(left: Vector3i, right: Vector3i) -> Bool {
+    public static func ==(left: RenderPoint, right: RenderPoint) -> Bool {
         return left.x == right.x && left.y == right.y && left.z == right.z
     }
 }
@@ -44,7 +60,7 @@ public func *<F>(left: Vector3D<F>, right: F) -> Vector3D<F> {
 }
 
 public func *<F>(left: Vector3D<F>, right: Vector3D<F>) -> F {
-    return left.x * right.x + left.y + right.y + left.z + right.z
+    return left.x * right.x + left.y * right.y + left.z * right.z
 }
 
 public func /<F>(left: Vector3D<F>, right: F) -> Vector3D<F> {

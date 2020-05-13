@@ -59,6 +59,8 @@ public func createScaleMatrix<F: FloatingPoint>(xScale: F, yScale: F, zScale: F)
 
 @inlinable
 public func createRotationMatrix<F: FloatingPoint>(xAxis: F, yAxis: F, zAxis: F, theta: F) -> Matrix<F> {
+    var result = Matrix<F>(rows: 4, columns: 4)
+    
     let w = cos(theta as! Double / 2.0) as! F
     let sinHalfTheta = sin(theta as! Double / 2.0) as! F
     let x = xAxis * sinHalfTheta
@@ -68,8 +70,6 @@ public func createRotationMatrix<F: FloatingPoint>(xAxis: F, yAxis: F, zAxis: F,
     let zero = F.zero
     let one = 1 as F
     let two = 2 as F
-    
-    var result = Matrix<F>(rows: 4, columns: 4)
     
     result.set(row: 0, column: 0, to: one - two * y * y - two * z * z)
     result.set(row: 1, column: 0, to: two * x * y + two * w + z)
@@ -95,8 +95,37 @@ public func createRotationMatrix<F: FloatingPoint>(xAxis: F, yAxis: F, zAxis: F,
 }
 
 @inlinable
-public func createCameraMatrix<F: FloatingPoint>(camera: Camera) -> Matrix<F> {
+public func createCameraMatrix<F: FloatingPoint>(camera: Camera<F>) -> Matrix<F> {
     var result = Matrix<F>(rows: 4, columns: 4)
+    
+    let zVector = (camera.lookingAtPos - camera.eyePos).normalize()
+    let xVector = camera.up.crossMultiply(with: zVector).normalize()
+    let yVector = zVector.crossMultiply(with: xVector).normalize()
+    
+    result.setRow(row: 0, to: [xVector.x, xVector.y, xVector.z, .zero])
+    result.setRow(row: 1, to: [yVector.x, yVector.y, yVector.z, .zero])
+    result.setRow(row: 2, to: [zVector.x, zVector.y, zVector.z, .zero])
+    result.set(row: 3, column: 3, to: 1 as F)
+    
+    return result
+}
+
+@inlinable
+public func createPerspectiveMatrix<F: FloatingPoint>(camera: Camera<F>) -> Matrix<F> {
+    var result = Matrix<F>(rows: 4, columns: 4)
+    
+    let fov = camera.fov!, aspect = camera.aspect!, zn = camera.zn!, zf = camera.zf!
+    
+    let one = 1 as F
+    let two = 2 as F
+    
+    let fax = one / (tan((fov / two) as! Double) as! F)
+    
+    result.set(row: 0, column: 0, to: fax / aspect)
+    result.set(row: 1, column: 1, to: fax)
+    result.set(row: 2, column: 2, to: zf / (zf - zn))
+    result.set(row: 2, column: 3, to: -zn * zf / (zf - zn))
+    result.set(row: 3, column: 3, to: 1 as F)
     
     return result
 }

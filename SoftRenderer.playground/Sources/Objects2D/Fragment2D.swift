@@ -28,7 +28,8 @@ public class Fragment2D: ObjectDrawProtocol2D {
             return
         }
         
-        rasterize(pA: tPointA, pB: tPointB, pC: tPointC) { point, interp in
+        rasterize(canvasWidth: Double(canvasSize.width), canvasHeight: Double(canvasSize.height), pA: tPointA, pB: tPointB, pC: tPointC) { point, interp in
+            
             var pixel: Pixel!
             if singleColor {
                 pixel = color2Pixel(color: tColorA)

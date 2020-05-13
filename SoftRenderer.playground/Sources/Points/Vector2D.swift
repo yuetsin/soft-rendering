@@ -6,6 +6,17 @@ public class Vector2D<F: FloatingPoint>: ScreenPoint<F>, Equatable {
     public func toNSPoint() -> NSPoint {
         return NSMakePoint(x as! CGFloat, y as! CGFloat)
     }
+    
+    @inlinable
+    public func magnitude() -> F {
+        return sqrt(x * x + y * y)
+    }
+    
+    @inlinable
+    public func normalize() -> Vector2D<F> {
+        let scale = sqrt(x * x + y * y)
+        return Vector2D<F>(x / scale, y / scale)
+    }
 }
 
 public class Vector2i: Equatable {

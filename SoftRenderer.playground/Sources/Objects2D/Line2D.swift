@@ -26,7 +26,7 @@ public class Line2D: ObjectDrawProtocol2D {
             return
         }
         
-        rasterize(lineBeginPos, lineEndPos, handler: { point, interp in
+        rasterize(canvasWidth: Double(canvasSize.width), canvasHeight: Double(canvasSize.height), lineBeginPos, lineEndPos, handler: { point, interp in
             var pixel: Pixel!
             if singleColor {
                 pixel = color2Pixel(color: lineBeginColor)

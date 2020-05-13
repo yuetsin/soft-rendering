@@ -24,7 +24,7 @@ public func randomPoint2d(size: CGSize) -> Vector2d {
 }
 
 public func randomPoint3d(size: CGSize) -> Vector3d {
-    return Vector3d(Double.random(0, Double(size.width)), Double.random(0, Double(size.height)), Double.random())
+    return Vector3d(Double.random(0, Double(size.width)), Double.random(0, Double(size.height)), Double.random(0, 2))
 }
 
 public func randomCIColor() -> CIColor {

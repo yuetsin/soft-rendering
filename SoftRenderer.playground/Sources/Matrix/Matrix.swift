@@ -26,6 +26,26 @@ public struct Matrix<F: FloatingPoint> {
         }
         data[row * columnCount + column] = target
     }
+    
+    @inlinable
+    mutating public func setRow(row: Int, to target: [F]) {
+        if target.count != columnCount {
+            fatalError("trying to setRow with unmatched target size")
+        }
+        for index in 0 ..< target.count {
+            set(row: row, column: index, to: target[index])
+        }
+    }
+    
+    @inlinable
+    mutating public func setColumn(column: Int, to target: [F]) {
+        if target.count != rowCount {
+            fatalError("trying to setColumn with unmatched target size")
+        }
+        for index in 0 ..< target.count {
+            set(row: index, column: column, to: target[index])
+        }
+    }
 }
 
 public func +<F: FloatingPoint>(left: Matrix<F>, right: Matrix<F>) -> Matrix<F> {

@@ -19,8 +19,11 @@ public class Line3D: ObjectDrawProtocol3D {
         singleColor = endColor == nil
     }
 
-    public func drawOn(target pixels: inout [Pixel], canvasSize: CGSize, depthBuffer: inout [Double], lights: inout [Light], camera: Camera) {
-        rasterize(lineBeginPos, lineEndPos, handler: { point, interp in
+    public func drawOn(target pixels: inout [Pixel], canvasSize: CGSize, depthBuffer: inout [Double], lights: inout [Light], camera: Camera<Double>) {
+        let pBegin = transformPoint(point: lineBeginPos, camera: camera, width: Double(canvasSize.width), height: Double(canvasSize.height))
+        let pEnd = transformPoint(point: lineEndPos, camera: camera, width: Double(canvasSize.width), height: Double(canvasSize.height))
+
+        rasterize(canvasWidth: Double(canvasSize.width), canvasHeight: Double(canvasSize.height), pBegin, pEnd, handler: { point, interp in
             let x = point.x, y = point.y, z = point.z
             var pixel: Pixel!
             if singleColor {

@@ -1,19 +1,19 @@
 import Cocoa
 
 // Bresenham's approach
-public func rasterize<F: FloatingPoint>(_ lineBeginPos: Vector3D<F>, _ lineEndPos: Vector3D<F>,
-                                        handler: (Vector3i, LinearInterpolate<Double>) -> Void) {
+public func rasterize<F: FloatingPoint>(canvasWidth: F, canvasHeight: F, _ lineBeginPos: Vector3D<F>, _ lineEndPos: Vector3D<F>,
+                                        handler: (RenderPoint, LinearInterpolate<Double>) -> Void) {
     let z0 = lineBeginPos.z as! Double, z1 = lineEndPos.z as! Double
     let flatBeginPos = Vector2D<F>(lineBeginPos.x, lineBeginPos.y)
     let flatEndPos = Vector2D<F>(lineEndPos.x, lineEndPos.y)
-    rasterize(flatBeginPos, flatEndPos,
+    rasterize(canvasWidth: canvasWidth, canvasHeight: canvasHeight, flatBeginPos, flatEndPos,
               handler: { p2i, interp in
                 let z = interp.u * z0 + interp.v * z1
-                  handler(Vector3i(p2i.x, p2i.y, z), interp)
+                  handler(RenderPoint(p2i.x, p2i.y, z), interp)
     })
 }
 
-public func rasterize<F: FloatingPoint>(_ lineBeginPos: Vector2D<F>, _ lineEndPos: Vector2D<F>,
+public func rasterize<F: FloatingPoint>(canvasWidth: F, canvasHeight: F, _ lineBeginPos: Vector2D<F>, _ lineEndPos: Vector2D<F>,
                                         handler: (Vector2i, LinearInterpolate<Double>) -> Void) {
     var x0 = Int(lineBeginPos.x as! Double)
     var y0 = Int(lineBeginPos.y as! Double)
@@ -42,6 +42,9 @@ public func rasterize<F: FloatingPoint>(_ lineBeginPos: Vector2D<F>, _ lineEndPo
     var y = y0
 
     for x in x0 ... x1 {
+        if Double(x) > canvasWidth as! Double {
+            break
+        }
         var progress = Double(x - x0) / Double(dx)
         if inverse {
             progress = 1 - progress

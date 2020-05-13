@@ -6,7 +6,7 @@ public class SRCanvas: NSImageView {
     // basic
     public var imageSize: CGSize!
     public var canvasBgColor: CIColor!
-    private var worldCamera: Camera!
+    public var worldCamera: Camera<Double>!
     
     // canvas buffer
     private var imageBuffer: [Pixel]!
