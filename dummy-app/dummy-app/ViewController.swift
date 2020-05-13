@@ -15,22 +15,22 @@ class ViewController: NSViewController {
     var canvasSize: CGSize!
 
     @IBAction func moveLeftCamera(_ sender: NSButton) {
-        canvas.worldCamera.lookingAtPos.x -= 5
+        canvas.worldCamera.eyePos.x -= 0.5
         canvas.render()
     }
     
     @IBAction func moveRightCamera(_ sender: NSButton) {
-        canvas.worldCamera.lookingAtPos.x += 5
+        canvas.worldCamera.eyePos.x += 0.5
         canvas.render()
     }
     
     @IBAction func moveUpCamera(_ sender: NSButton) {
-        canvas.worldCamera.lookingAtPos.y += 5
+        canvas.worldCamera.eyePos.y += 0.5
         canvas.render()
     }
     
     @IBAction func moveDownCamera(_ sender: NSButton) {
-        canvas.worldCamera.lookingAtPos.y -= 5
+        canvas.worldCamera.eyePos.y -= 0.5
         canvas.render()
     }
     
@@ -61,8 +61,16 @@ class ViewController: NSViewController {
         canvas = SRCanvas(size: canvasSize, color: .clear)
 
         
-        for fragment in generateCube(basePoint: Vector3d(1, 0, 0), size: 10) {
+        for fragment in generateCube(basePoint: Vector3d(1, 0, 0), size: 3) {
             canvas.addObject(object: fragment)
+        }
+
+        for line in generateRefrenceLines(distance: 0.5, count: 5) {
+            canvas.addObject(object: line)
+        }
+        
+        for line in generateAxis(length: 3) {
+            canvas.addObject(object: line)
         }
 
         view.addSubview(canvas)

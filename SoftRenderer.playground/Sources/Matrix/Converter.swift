@@ -100,14 +100,19 @@ public func createCameraMatrix<F: FloatingPoint>(camera: Camera<F>) -> Matrix<F>
     
     let zVector = (camera.lookingAtPos - camera.eyePos).normalize()
     let xVector = camera.up.crossMultiply(with: zVector).normalize()
-    let yVector = zVector.crossMultiply(with: xVector).normalize()
+    let yVector = zVector.crossMultiply(with: xVector)
     
     result.setRow(row: 0, to: [xVector.x, xVector.y, xVector.z, .zero])
     result.setRow(row: 1, to: [yVector.x, yVector.y, yVector.z, .zero])
     result.setRow(row: 2, to: [zVector.x, zVector.y, zVector.z, .zero])
     result.set(row: 3, column: 3, to: 1 as F)
     
-    return result
+    var cameraPositionMatrix: Matrix<F> = createIdentityMatrix(size: 4)
+    cameraPositionMatrix.set(row: 0, column: 3, to: -camera.eyePos.x)
+    cameraPositionMatrix.set(row: 1, column: 3, to: -camera.eyePos.y)
+    cameraPositionMatrix.set(row: 2, column: 3, to: -camera.eyePos.z)
+    
+    return result * cameraPositionMatrix
 }
 
 @inlinable
@@ -125,7 +130,7 @@ public func createPerspectiveMatrix<F: FloatingPoint>(camera: Camera<F>) -> Matr
     result.set(row: 1, column: 1, to: fax)
     result.set(row: 2, column: 2, to: zf / (zf - zn))
     result.set(row: 2, column: 3, to: -zn * zf / (zf - zn))
-    result.set(row: 3, column: 3, to: 1 as F)
+    result.set(row: 3, column: 2, to: 1 as F)
     
     return result
 }

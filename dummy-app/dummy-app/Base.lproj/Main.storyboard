@@ -716,7 +716,7 @@
                                         <rect key="frame" x="-6" y="-7" width="59" height="32"/>
                                         <buttonCell key="cell" type="push" title="⬅️" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0mh-U9-BcN">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" size="13" name=".AppleColorEmojiUI"/>
+                                            <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="moveLeftCamera:" target="XfG-lQ-9wD" id="v4Y-4r-XLF"/>
@@ -726,7 +726,7 @@
                                         <rect key="frame" x="47" y="-7" width="59" height="32"/>
                                         <buttonCell key="cell" type="push" title="⬆️" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hN5-M2-FjO">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" size="13" name=".AppleColorEmojiUI"/>
+                                            <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="moveUpCamera:" target="XfG-lQ-9wD" id="nlD-OK-wq4"/>
@@ -746,7 +746,7 @@
                                         <rect key="frame" x="175" y="-7" width="59" height="32"/>
                                         <buttonCell key="cell" type="push" title="➡️" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hgj-FI-WBx">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" size="13" name=".AppleColorEmojiUI"/>
+                                            <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="moveRightCamera:" target="XfG-lQ-9wD" id="P2e-f3-SEa"/>
@@ -756,7 +756,7 @@
                                         <rect key="frame" x="228" y="-7" width="59" height="32"/>
                                         <buttonCell key="cell" type="push" title="⬇️" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5Hk-fH-NeJ">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" size="13" name=".AppleColorEmojiUI"/>
+                                            <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="moveDownCamera:" target="XfG-lQ-9wD" id="1zM-f4-SXI"/>

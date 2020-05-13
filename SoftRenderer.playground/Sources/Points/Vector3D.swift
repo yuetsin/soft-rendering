@@ -10,6 +10,11 @@ public class Vector3D<F: FloatingPoint>: ScreenPoint<F>, Equatable {
         super.init(x, y)
     }
     
+    public override init() {
+        self.z = .zero
+        super.init(.zero, .zero)
+    }
+    
     @inlinable
     public func magnitude() -> F {
         return sqrt(x * x + y * y + z * z)

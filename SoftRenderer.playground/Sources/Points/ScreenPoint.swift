@@ -8,4 +8,9 @@ public class ScreenPoint<F: FloatingPoint> {
         x = X
         y = Y
     }
+    
+    public init() {
+        x = .zero
+        y = .zero
+    }
 }

@@ -20,7 +20,6 @@ public class Line2D: ObjectDrawProtocol2D {
     }
 
     public func drawOn(target pixels: inout [Pixel], canvasSize: CGSize) {
-        
         // reject degenerated lines
         if lineBeginPos == lineEndPos {
             return
