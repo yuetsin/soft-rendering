@@ -19,12 +19,12 @@ public extension CGFloat {
     }
 }
 
-public func randomPoint2d(size: CGSize) -> Point2d {
-    return Point2d(Double.random(0, Double(size.width)), Double.random(0, Double(size.height)))
+public func randomPoint2d(size: CGSize) -> Vector2d {
+    return Vector2d(Double.random(0, Double(size.width)), Double.random(0, Double(size.height)))
 }
 
-public func randomPoint3d(size: CGSize) -> Point3d {
-    return Point3d(Double.random(0, Double(size.width)), Double.random(0, Double(size.height)), Double.random())
+public func randomPoint3d(size: CGSize) -> Vector3d {
+    return Vector3d(Double.random(0, Double(size.width)), Double.random(0, Double(size.height)), Double.random())
 }
 
 public func randomCIColor() -> CIColor {

@@ -2,14 +2,14 @@
 import Cocoa
 
 public class TextureFragment3D: ObjectDrawProtocol3D {
-    var tPointA, tPointB, tPointC: Point3d!
+    var tPointA, tPointB, tPointC: Vector3d!
     var texture: NSBitmapImageRep!
     var textureSize: NSSize!
     var texCoordsA, texCoordsB, texCoordsC: TextureCoords2D!
 
-    public init(pointA: Point3d,
-                pointB: Point3d,
-                pointC: Point3d,
+    public init(pointA: Vector3d,
+                pointB: Vector3d,
+                pointC: Vector3d,
                 texImage: NSImage,
                 coordsA: TextureCoords2D,
                 coordsB: TextureCoords2D,

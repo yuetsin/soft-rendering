@@ -5,11 +5,11 @@ public class Light {
     public var lightType: LightType!
     
     // ambient light doesn't require lightPosition
-    public var lightPosition: Point3d?
+    public var lightPosition: Vector3d?
     
     public init(color: CIColor,
                 type: LightType,
-                position: Point3d? = nil) {
+                position: Vector3d? = nil) {
         lightColor = color
         lightType = type
         

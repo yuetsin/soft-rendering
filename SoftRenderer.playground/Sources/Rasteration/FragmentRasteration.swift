@@ -1,23 +1,23 @@
 import Cocoa
 
-public func rasterize<F: FloatingPoint>(pA tPointA: Point3D<F>, pB tPointB: Point3D<F>, pC tPointC: Point3D<F>,
-                                        handler: (Point3i, FragmentInterpolate<Double>) -> Void) {
+public func rasterize<F: FloatingPoint>(pA tPointA: Vector3D<F>, pB tPointB: Vector3D<F>, pC tPointC: Vector3D<F>,
+                                        handler: (Vector3i, FragmentInterpolate<Double>) -> Void) {
     let z0 = tPointA.z as! Double, z1: Double = tPointB.z as! Double, z2: Double = tPointC.z as! Double
-    let flatPointA = Point2D<F>(tPointA.x, tPointA.y)
-    let flatPointB = Point2D<F>(tPointB.x, tPointB.y)
-    let flatPointC = Point2D<F>(tPointC.x, tPointC.y)
+    let flatPointA = Vector2D<F>(tPointA.x, tPointA.y)
+    let flatPointB = Vector2D<F>(tPointB.x, tPointB.y)
+    let flatPointC = Vector2D<F>(tPointC.x, tPointC.y)
     rasterize(pA: flatPointA, pB: flatPointB, pC: flatPointC, handler: { point, interp in
         // use ugly expression to avoid
         // "The compiler is unable to type-check this expression in reasonable time" error
         var z: Double = z0 * interp.u
         z += z1 * interp.v
         z += z2 * interp.w
-        handler(Point3i(point.x, point.y, z), interp)
+        handler(Vector3i(point.x, point.y, z), interp)
     })
 }
 
-public func rasterize<F: FloatingPoint>(pA tPointA: Point2D<F>, pB tPointB: Point2D<F>, pC tPoint3: Point2D<F>,
-                                        handler: (Point2i, FragmentInterpolate<Double>) -> Void) {
+public func rasterize<F: FloatingPoint>(pA tPointA: Vector2D<F>, pB tPointB: Vector2D<F>, pC tPoint3: Vector2D<F>,
+                                        handler: (Vector2i, FragmentInterpolate<Double>) -> Void) {
     var P1 = tPointA, P2 = tPointB, P3 = tPoint3
     
     var inverse12 = false
@@ -38,7 +38,7 @@ public func rasterize<F: FloatingPoint>(pA tPointA: Point2D<F>, pB tPointB: Poin
     }
     let total_height = Int((P3.y - P1.y) as! Double)
     for i in 0 ..< total_height {
-        var A, B: Point2D<F>!
+        var A, B: Vector2D<F>!
         var segment_height, alpha, beta: Double!
         var offset: Int!
 
@@ -95,7 +95,7 @@ public func rasterize<F: FloatingPoint>(pA tPointA: Point2D<F>, pB tPointB: Poin
                 (v, w) = (w, v)
             }
 
-            handler(Point2i(x, y), FragmentInterpolate<Double>(u: u, v: v, w: w))
+            handler(Vector2i(x, y), FragmentInterpolate<Double>(u: u, v: v, w: w))
         }
     }
 }

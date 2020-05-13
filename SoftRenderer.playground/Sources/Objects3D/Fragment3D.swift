@@ -1,14 +1,14 @@
 import Cocoa
 
 public class Fragment3D: ObjectDrawProtocol3D {
-    var tPointA, tPointB, tPointC: Point3d!
+    var tPointA, tPointB, tPointC: Vector3d!
     var tColorA, tColorB, tColorC: CIColor!
 
     var singleColor: Bool!
 
-    public init(pointA: Point3d,
-                pointB: Point3d,
-                pointC: Point3d,
+    public init(pointA: Vector3d,
+                pointB: Vector3d,
+                pointC: Vector3d,
                 colorA: CIColor,
                 colorB: CIColor? = nil,
                 colorC: CIColor? = nil) {

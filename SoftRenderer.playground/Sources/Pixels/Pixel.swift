@@ -48,7 +48,7 @@ public func putPixel(pixels: inout [Pixel], x: Int, y: Int, size: CGSize, target
 }
 
 @inlinable
-public func putPixel(pixels: inout [Pixel], point: Point2i, size: CGSize, target: Pixel) {
+public func putPixel(pixels: inout [Pixel], point: Vector2i, size: CGSize, target: Pixel) {
     if point.x >= Int(size.width) || point.y >= Int(size.height) || point.x < 0 || point.y < 0 {
         return
     }

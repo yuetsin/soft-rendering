@@ -26,10 +26,10 @@
 		8A72CF3D246BAEBB004E153F /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF20246BAEBB004E153F /* Canvas.swift */; };
 		8A72CF3E246BAEBB004E153F /* Line2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF22246BAEBB004E153F /* Line2D.swift */; };
 		8A72CF3F246BAEBB004E153F /* Fragment2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF23246BAEBB004E153F /* Fragment2D.swift */; };
-		8A72CF40246BAEBB004E153F /* Point2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF25246BAEBB004E153F /* Point2D.swift */; };
+		8A72CF40246BAEBB004E153F /* Vector2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF25246BAEBB004E153F /* Vector2D.swift */; };
 		8A72CF41246BAEBB004E153F /* ScreenPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF26246BAEBB004E153F /* ScreenPoint.swift */; };
 		8A72CF42246BAEBB004E153F /* TextureCoords2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF27246BAEBB004E153F /* TextureCoords2D.swift */; };
-		8A72CF43246BAEBB004E153F /* Point3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF28246BAEBB004E153F /* Point3D.swift */; };
+		8A72CF43246BAEBB004E153F /* Vector3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF28246BAEBB004E153F /* Vector3D.swift */; };
 		8A72CF44246BAEBB004E153F /* FragmentInterpolate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF2A246BAEBB004E153F /* FragmentInterpolate.swift */; };
 		8A72CF45246BAEBB004E153F /* LinearInterpolate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF2B246BAEBB004E153F /* LinearInterpolate.swift */; };
 		8A72CF46246BAEBB004E153F /* ColorInterpolate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF2C246BAEBB004E153F /* ColorInterpolate.swift */; };
@@ -64,10 +64,10 @@
 		8A72CF20246BAEBB004E153F /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		8A72CF22246BAEBB004E153F /* Line2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line2D.swift; sourceTree = "<group>"; };
 		8A72CF23246BAEBB004E153F /* Fragment2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fragment2D.swift; sourceTree = "<group>"; };
-		8A72CF25246BAEBB004E153F /* Point2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point2D.swift; sourceTree = "<group>"; };
+		8A72CF25246BAEBB004E153F /* Vector2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector2D.swift; sourceTree = "<group>"; };
 		8A72CF26246BAEBB004E153F /* ScreenPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenPoint.swift; sourceTree = "<group>"; };
 		8A72CF27246BAEBB004E153F /* TextureCoords2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureCoords2D.swift; sourceTree = "<group>"; };
-		8A72CF28246BAEBB004E153F /* Point3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point3D.swift; sourceTree = "<group>"; };
+		8A72CF28246BAEBB004E153F /* Vector3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3D.swift; sourceTree = "<group>"; };
 		8A72CF2A246BAEBB004E153F /* FragmentInterpolate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FragmentInterpolate.swift; sourceTree = "<group>"; };
 		8A72CF2B246BAEBB004E153F /* LinearInterpolate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearInterpolate.swift; sourceTree = "<group>"; };
 		8A72CF2C246BAEBB004E153F /* ColorInterpolate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorInterpolate.swift; sourceTree = "<group>"; };
@@ -174,6 +174,7 @@
 			children = (
 				8A72CF1C246BAEBB004E153F /* Random.swift */,
 				8A72CF1D246BAEBB004E153F /* Normalize.swift */,
+				8A72CF1F246BAEBB004E153F /* Consts.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -181,7 +182,6 @@
 		8A72CF1E246BAEBB004E153F /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
-				8A72CF1F246BAEBB004E153F /* Consts.swift */,
 				8A72CF20246BAEBB004E153F /* Canvas.swift */,
 			);
 			path = Canvas;
@@ -199,10 +199,10 @@
 		8A72CF24246BAEBB004E153F /* Points */ = {
 			isa = PBXGroup;
 			children = (
-				8A72CF25246BAEBB004E153F /* Point2D.swift */,
+				8A72CF25246BAEBB004E153F /* Vector2D.swift */,
 				8A72CF26246BAEBB004E153F /* ScreenPoint.swift */,
 				8A72CF27246BAEBB004E153F /* TextureCoords2D.swift */,
-				8A72CF28246BAEBB004E153F /* Point3D.swift */,
+				8A72CF28246BAEBB004E153F /* Vector3D.swift */,
 			);
 			path = Points;
 			sourceTree = "<group>";
@@ -317,7 +317,7 @@
 				8A72CF33246BAEBB004E153F /* ObjectDrawProtocol2D.swift in Sources */,
 				8A72CF42246BAEBB004E153F /* TextureCoords2D.swift in Sources */,
 				8A72CF46246BAEBB004E153F /* ColorInterpolate.swift in Sources */,
-				8A72CF43246BAEBB004E153F /* Point3D.swift in Sources */,
+				8A72CF43246BAEBB004E153F /* Vector3D.swift in Sources */,
 				8A72CF3E246BAEBB004E153F /* Line2D.swift in Sources */,
 				8A6D7161246A2F6A003CA46C /* AppDelegate.swift in Sources */,
 				8A72CF47246BAEBB004E153F /* TextureInterpolate.swift in Sources */,
@@ -325,7 +325,7 @@
 				8A72CF41246BAEBB004E153F /* ScreenPoint.swift in Sources */,
 				8A72CF3F246BAEBB004E153F /* Fragment2D.swift in Sources */,
 				8A72CF38246BAEBB004E153F /* Light.swift in Sources */,
-				8A72CF40246BAEBB004E153F /* Point2D.swift in Sources */,
+				8A72CF40246BAEBB004E153F /* Vector2D.swift in Sources */,
 				8A72CF49246BAEBB004E153F /* BitmapHelper.swift in Sources */,
 				8A72CF3D246BAEBB004E153F /* Canvas.swift in Sources */,
 				8A72CF3A246BAEBB004E153F /* Random.swift in Sources */,

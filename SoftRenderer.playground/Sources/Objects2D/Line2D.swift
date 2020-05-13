@@ -1,12 +1,12 @@
 import Cocoa
 
 public class Line2D: ObjectDrawProtocol2D {
-    var lineBeginPos, lineEndPos: Point2d!
+    var lineBeginPos, lineEndPos: Vector2d!
     var lineBeginColor, lineEndColor: CIColor!
     var singleColor: Bool!
 
-    public init(beginPoint: Point2d,
-                endPoint: Point2d,
+    public init(beginPoint: Vector2d,
+                endPoint: Vector2d,
                 color: CIColor,
                 endColor: CIColor? = nil) {
         lineBeginPos = beginPoint

@@ -41,7 +41,7 @@ class ViewController: NSViewController {
         canvas = SRCanvas(size: canvasSize, color: .clear)
 
         
-        for fragment in generateCube(basePoint: Point3d(0, 0, 0), size: 100) {
+        for fragment in generateCube(basePoint: Vector3d(0, 0, 0), size: 100) {
             canvas.addObject(object: fragment)
         }
 

@@ -1,20 +1,20 @@
 import Cocoa
 
 // Bresenham's approach
-public func rasterize<F: FloatingPoint>(_ lineBeginPos: Point3D<F>, _ lineEndPos: Point3D<F>,
-                                        handler: (Point3i, LinearInterpolate<Double>) -> Void) {
+public func rasterize<F: FloatingPoint>(_ lineBeginPos: Vector3D<F>, _ lineEndPos: Vector3D<F>,
+                                        handler: (Vector3i, LinearInterpolate<Double>) -> Void) {
     let z0 = lineBeginPos.z as! Double, z1 = lineEndPos.z as! Double
-    let flatBeginPos = Point2D<F>(lineBeginPos.x, lineBeginPos.y)
-    let flatEndPos = Point2D<F>(lineEndPos.x, lineEndPos.y)
+    let flatBeginPos = Vector2D<F>(lineBeginPos.x, lineBeginPos.y)
+    let flatEndPos = Vector2D<F>(lineEndPos.x, lineEndPos.y)
     rasterize(flatBeginPos, flatEndPos,
               handler: { p2i, interp in
                 let z = interp.u * z0 + interp.v * z1
-                  handler(Point3i(p2i.x, p2i.y, z), interp)
+                  handler(Vector3i(p2i.x, p2i.y, z), interp)
     })
 }
 
-public func rasterize<F: FloatingPoint>(_ lineBeginPos: Point2D<F>, _ lineEndPos: Point2D<F>,
-                                        handler: (Point2i, LinearInterpolate<Double>) -> Void) {
+public func rasterize<F: FloatingPoint>(_ lineBeginPos: Vector2D<F>, _ lineEndPos: Vector2D<F>,
+                                        handler: (Vector2i, LinearInterpolate<Double>) -> Void) {
     var x0 = Int(lineBeginPos.x as! Double)
     var y0 = Int(lineBeginPos.y as! Double)
     var x1 = Int(lineEndPos.x as! Double)
@@ -47,9 +47,9 @@ public func rasterize<F: FloatingPoint>(_ lineBeginPos: Point2D<F>, _ lineEndPos
             progress = 1 - progress
         }
         if steep {
-            handler(Point2i(y, x), LinearInterpolate<Double>(u: 1 - progress, v: progress))
+            handler(Vector2i(y, x), LinearInterpolate<Double>(u: 1 - progress, v: progress))
         } else {
-            handler(Point2i(x, y), LinearInterpolate<Double>(u: 1 - progress, v: progress))
+            handler(Vector2i(x, y), LinearInterpolate<Double>(u: 1 - progress, v: progress))
         }
         error2 += derror2
         if error2 > dx {

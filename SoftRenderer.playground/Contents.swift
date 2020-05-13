@@ -9,11 +9,11 @@ var canvas = SRCanvas(size: canvasSize, color: CIColor.clear)
 PlaygroundPage.current.liveView = canvas
 
 //: define `Object2DDrawable` objects
-let line = Line2D(beginPoint: Point2d(30, 30),
-                  endPoint: Point2d(100, 120), color: CIColor.red, endColor: CIColor.blue)
-let fragment = Fragment2D(pointA: Point2d(0, 0),
-                          pointB: Point2d(100, 30),
-                          pointC: Point2d(50, 140),
+let line = Line2D(beginPoint: Vector2d(30, 30),
+                  endPoint: Vector2d(100, 120), color: CIColor.red, endColor: CIColor.blue)
+let fragment = Fragment2D(pointA: Vector2d(0, 0),
+                          pointB: Vector2d(100, 30),
+                          pointC: Vector2d(50, 140),
                         colorA: CIColor.yellow,
                         colorB: CIColor.cyan,
                         colorC: CIColor.magenta)

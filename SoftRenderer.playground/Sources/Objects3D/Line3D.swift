@@ -1,12 +1,12 @@
 import Cocoa
 
 public class Line3D: ObjectDrawProtocol3D {
-    var lineBeginPos, lineEndPos: Point3d!
+    var lineBeginPos, lineEndPos: Vector3d!
     var lineBeginColor, lineEndColor: CIColor!
     var singleColor: Bool!
 
-    public init(beginPoint: Point3d,
-                endPoint: Point3d,
+    public init(beginPoint: Vector3d,
+                endPoint: Vector3d,
                 color: CIColor,
                 endColor: CIColor? = nil) {
         lineBeginPos = beginPoint

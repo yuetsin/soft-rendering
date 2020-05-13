@@ -29,7 +29,7 @@ public func createVerticalMatrix<F: FloatingPoint>(values: [F]) -> Matrix<F> {
 }
 
 @inlinable
-public func createPointMatrix<F: FloatingPoint>(point: Point3D<F>) -> Matrix<F> {
+public func createPointMatrix<F: FloatingPoint>(point: Vector3D<F>) -> Matrix<F> {
     var result = Matrix<F>(rows: 4, columns: 1)
     result.set(row: 0, column: 0, to: point.x)
     result.set(row: 1, column: 0, to: point.y)
@@ -98,5 +98,5 @@ public func createRotationMatrix<F: FloatingPoint>(xAxis: F, yAxis: F, zAxis: F,
 public func createCameraMatrix<F: FloatingPoint>(camera: Camera) -> Matrix<F> {
     var result = Matrix<F>(rows: 4, columns: 4)
     
-    
+    return result
 }

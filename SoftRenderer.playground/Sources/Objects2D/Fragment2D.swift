@@ -1,13 +1,13 @@
 import Cocoa
 
 public class Fragment2D: ObjectDrawProtocol2D {
-    var tPointA, tPointB, tPointC: Point2d!
+    var tPointA, tPointB, tPointC: Vector2d!
     var tColorA, tColorB, tColorC: CIColor!
     var singleColor: Bool!
 
-    public init(pointA: Point2d,
-                pointB: Point2d,
-                pointC: Point2d,
+    public init(pointA: Vector2d,
+                pointB: Vector2d,
+                pointC: Vector2d,
                 colorA: CIColor,
                 colorB: CIColor? = nil,
                 colorC: CIColor? = nil) {
