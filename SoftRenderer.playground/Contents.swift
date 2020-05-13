@@ -18,24 +18,21 @@ let fragment = Fragment2D(pointA: Point2d(0, 0),
                         colorB: CIColor.cyan,
                         colorC: CIColor.magenta)
 
-let fragment3d = TextureFragment3D(pointA: randomPoint3d(size: canvasSize),
-                                   pointB: randomPoint3d(size: canvasSize),
-                                   pointC: randomPoint3d(size: canvasSize),
-                                   texImage: NSImage(imageLiteralResourceName: "grass.png"),
-                                   coordsA: .leftBottom,
-                                   coordsB: .leftTop,
-                                   coordsC: .rightBottom)
+
+
+
+
 //: put them on the canvas
 canvas.addObject(object: fragment)
 canvas.addObject(object: line)
-
-for _ in 0 ..< 30 {
-    let fragment = Fragment3D(pointA: randomPoint3d(size: canvasSize),
-    pointB: randomPoint3d(size: canvasSize),
-    pointC: randomPoint3d(size: canvasSize),
-    colorA: randomCIColor())
-    canvas.addObject(object: fragment)
-}
+//
+//for _ in 0 ..< 30 {
+//    let fragment = Fragment3D(pointA: randomPoint3d(size: canvasSize),
+//    pointB: randomPoint3d(size: canvasSize),
+//    pointC: randomPoint3d(size: canvasSize),
+//    colorA: randomCIColor())
+//    canvas.addObject(object: fragment)
+//}
 
 //: render it
 canvas.render()

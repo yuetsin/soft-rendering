@@ -37,6 +37,8 @@
 		8A72CF48246BAEBB004E153F /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF2F246BAEBB004E153F /* Pixel.swift */; };
 		8A72CF49246BAEBB004E153F /* BitmapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF30246BAEBB004E153F /* BitmapHelper.swift */; };
 		8A72CF4B246BB127004E153F /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A72CF4A246BB127004E153F /* grass.png */; };
+		8AE0BB77246BC27200CFB471 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE0BB76246BC27200CFB471 /* Matrix.swift */; };
+		8AE0BB79246BC74C00CFB471 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE0BB78246BC74C00CFB471 /* Converter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +75,8 @@
 		8A72CF2F246BAEBB004E153F /* Pixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
 		8A72CF30246BAEBB004E153F /* BitmapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitmapHelper.swift; sourceTree = "<group>"; };
 		8A72CF4A246BB127004E153F /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
+		8AE0BB76246BC27200CFB471 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		8AE0BB78246BC74C00CFB471 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 		8A72CF0E246BAEBB004E153F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				8AE0BB75246BC27200CFB471 /* Matrix */,
 				8A72CF0F246BAEBB004E153F /* Rasteration */,
 				8A72CF12246BAEBB004E153F /* ObjectBase */,
 				8A72CF15246BAEBB004E153F /* Objects3D */,
@@ -222,6 +227,15 @@
 			path = Pixels;
 			sourceTree = "<group>";
 		};
+		8AE0BB75246BC27200CFB471 /* Matrix */ = {
+			isa = PBXGroup;
+			children = (
+				8AE0BB76246BC27200CFB471 /* Matrix.swift */,
+				8AE0BB78246BC74C00CFB471 /* Converter.swift */,
+			);
+			path = Matrix;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AE0BB77246BC27200CFB471 /* Matrix.swift in Sources */,
 				8A72CF39246BAEBB004E153F /* Camera.swift in Sources */,
 				8A72CF32246BAEBB004E153F /* FragmentRasteration.swift in Sources */,
 				8A72CF31246BAEBB004E153F /* LineRasteration.swift in Sources */,
@@ -320,6 +335,7 @@
 				8A72CF3C246BAEBB004E153F /* Consts.swift in Sources */,
 				8A72CF3B246BAEBB004E153F /* Normalize.swift in Sources */,
 				8A72CF37246BAEBB004E153F /* Line3D.swift in Sources */,
+				8AE0BB79246BC74C00CFB471 /* Converter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

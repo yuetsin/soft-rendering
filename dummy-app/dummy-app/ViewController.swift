@@ -40,21 +40,10 @@ class ViewController: NSViewController {
         canvasSize = CGSize(width: view.frame.size.width, height: max(view.frame.size.height - 56, 0))
         canvas = SRCanvas(size: canvasSize, color: .clear)
 
-        let line = Line2D(beginPoint: Point2d(10, 10),
-                          endPoint: Point2d(200, 140), color: CIColor.red, endColor: CIColor.blue)
-
         
-        
-        let fragment = Fragment2D(pointA: Point2d(0, 0),
-                                  pointB: Point2d(100, 30),
-                                  pointC: Point2d(50, 140),
-                                colorA: CIColor.yellow,
-                                colorB: CIColor.magenta,
-                                colorC: CIColor.cyan)
-        
-
-        canvas.addObject(object: line)
-        canvas.addObject(object: fragment)
+        for fragment in generateCube(basePoint: Point3d(0, 0, 0), size: 100) {
+            canvas.addObject(object: fragment)
+        }
 
         view.addSubview(canvas)
         

@@ -21,6 +21,8 @@ public func rasterize<F: FloatingPoint>(_ lineBeginPos: Point2D<F>, _ lineEndPos
     var y1 = Int(lineEndPos.y as! Double)
 
     var steep = false
+    var inverse = false
+    
     if abs(x0 - x1) < abs(y0 - y1) {
         (x0, y0) = (y0, x0)
         (x1, y1) = (y1, x1)
@@ -30,6 +32,7 @@ public func rasterize<F: FloatingPoint>(_ lineBeginPos: Point2D<F>, _ lineEndPos
     if x0 > x1 {
         (x0, x1) = (x1, x0)
         (y0, y1) = (y1, y0)
+        inverse = true
     }
 
     let dx = x1 - x0
@@ -39,7 +42,10 @@ public func rasterize<F: FloatingPoint>(_ lineBeginPos: Point2D<F>, _ lineEndPos
     var y = y0
 
     for x in x0 ... x1 {
-        let progress = Double(x - x0) / Double(dx)
+        var progress = Double(x - x0) / Double(dx)
+        if inverse {
+            progress = 1 - progress
+        }
         if steep {
             handler(Point2i(y, x), LinearInterpolate<Double>(u: 1 - progress, v: progress))
         } else {

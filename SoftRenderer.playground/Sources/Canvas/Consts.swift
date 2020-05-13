@@ -17,3 +17,26 @@ public let defaultCamera = Camera(position: defaultCameraPosition, lookingAtPosi
 
 // light default values
 public let defaultLight = Light(color: CIColor.white, type: .ambient)
+
+public func generateCube(basePoint: Point3d, size: Double) -> [TextureFragment3D] {
+    
+    var fragments: [TextureFragment3D] = []
+    
+    fragments.append(TextureFragment3D(pointA: basePoint,
+    pointB: basePoint + Point3d(0, size, 0),
+    pointC: basePoint + Point3d(size, 0, 0),
+    texImage: NSImage(imageLiteralResourceName: "grass.png"),
+    coordsA: .leftTop,
+    coordsB: .leftBottom,
+    coordsC: .rightTop))
+    
+    fragments.append(TextureFragment3D(pointA: basePoint + Point3d(size, size, 0),
+    pointB: basePoint + Point3d(0, size, 0),
+    pointC: basePoint + Point3d(size, 0, 0),
+    texImage: NSImage(imageLiteralResourceName: "grass.png"),
+    coordsA: .rightBottom,
+    coordsB: .leftBottom,
+    coordsC: .rightTop))
+    
+    return fragments
+}
