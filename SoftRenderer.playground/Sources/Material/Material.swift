@@ -1,6 +1,14 @@
 import Cocoa
 
 public struct Material {
+    public init(shininess: CGFloat, color: CIColor) {
+        self.shininess = shininess
+        self.ambientColor = color
+        self.diffuseColor = color
+        self.specularColor = color
+        self.reflectColor = color
+    }
+    
     public init(shininess: CGFloat, ambientColor: CIColor, diffuseColor: CIColor, specularColor: CIColor, reflectColor: CIColor) {
         self.shininess = shininess
         self.ambientColor = ambientColor

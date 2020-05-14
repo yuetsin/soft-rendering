@@ -117,3 +117,8 @@ We'd better remove all irrelevant fragments first.
  */
 CanvasManager.canvas?.clearObject3D()
 view.drawReferences()
+
+/*:
+ Then, we can add several fragments into our canvas:
+ */
+
