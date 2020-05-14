@@ -16,11 +16,11 @@ public struct ControlPanelView: View {
     }
     
     public func drawReferences() {
-        for line in generateRefrenceLines(distance: 0.5, count: 5) {
+        for line in generateRefrenceLines(distance: 0.5, count: 4) {
             CanvasManager.canvas?.addObject(object: line)
         }
         
-        for line in generateAxis(length: 5) {
+        for line in generateAxis(length: 4) {
             CanvasManager.canvas?.addObject(object: line)
         }
     }
