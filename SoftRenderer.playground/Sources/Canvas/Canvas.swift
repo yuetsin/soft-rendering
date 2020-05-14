@@ -16,6 +16,18 @@ public struct SRCanvas {
     // pre-rendering object queues
     private var objects2D: [ObjectDrawProtocol2D] = []
     private var objects3D: [ObjectDrawProtocol3D] = []
+    
+    public func getObject2DCount() -> Int {
+        return objects2D.count
+    }
+    
+    public func getObject3DCount() -> Int {
+        return objects3D.count
+    }
+    
+    public func getLightsCount() -> Int {
+        return worldLights.count
+    }
 
     public init(size canvasSize: CGSize = defaultSize, color bgColor: CIColor = defaultColor) {
         // use NSView as a Canvas
@@ -50,6 +62,14 @@ public struct SRCanvas {
     
     mutating public func drawObject(object: ObjectDrawProtocol3D) {
         object.drawOn(target: &imageBuffer, canvasSize: imageSize, depthBuffer: &zBuffer, lights: &worldLights, camera: worldCamera)
+    }
+    
+    mutating public func clearObject2D() {
+        objects2D.removeAll()
+    }
+    
+    mutating public func clearObject3D() {
+        objects3D.removeAll()
     }
     
     // redraw any objects to the buffer, and resample it

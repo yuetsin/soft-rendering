@@ -4,7 +4,9 @@ public struct ControlPanelView: View {
 
     @State var image: NSImage?
     
-    @State var debugText: String = "hello, there"
+    @State var canvasDebugInfo: String = ""
+    @State var objectDebugInfo: String = "canvas not initialized"
+    @State var lightDebugInfo: String = ""
     
     public init(size: CGSize, color: CIColor = .clear) {
         CanvasManager.canvas = SRCanvas(size: size, color: color)
@@ -23,12 +25,14 @@ public struct ControlPanelView: View {
     public func redrawCanvas() {
         CanvasManager.canvas?.render()
         image = CanvasManager.canvas?.resample()
-        debugText = CanvasManager.generateDebugInfo()
+        (canvasDebugInfo, objectDebugInfo, lightDebugInfo) = CanvasManager.generateDebugInfo()
     }
     
     public var body: some View {
         VStack {
-            Text(debugText)
+            Text(canvasDebugInfo)
+            Text(objectDebugInfo)
+            Text(lightDebugInfo)
             HStack {
                 Button(action: {
                     self.redrawCanvas()
@@ -54,7 +58,11 @@ public struct ControlPanelView: View {
                     }) {
                         Text("Left")
                     }
-                    Image(nsImage: self.image ?? NSImage())
+                    if self.image != nil {
+                        Image(nsImage: self.image!)
+                    } else {
+                        Text("[canvas not rendered]")
+                    }
                     Button(action: {
                         
                     }) {
@@ -68,5 +76,11 @@ public struct ControlPanelView: View {
                 }
             }
         }.padding()
+    }
+}
+
+struct ControlPanel_Previews: PreviewProvider {
+    static var previews: some View {
+        ControlPanelView(size: CGSize(width: 400, height: 300), color: .white)
     }
 }
