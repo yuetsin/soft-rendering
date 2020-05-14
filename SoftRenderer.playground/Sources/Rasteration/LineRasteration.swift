@@ -23,10 +23,10 @@ public func rasterize<F: FloatingPoint>(canvasWidth: F, canvasHeight: F, _ lineB
 public func rasterize<F: FloatingPoint>(canvasWidth: F, canvasHeight: F, _ lineBeginPos: Vector2D<F>, _ lineEndPos: Vector2D<F>,
                                         handler: (Vector2i, LinearInterpolate<Double>) -> Void) {
     
-    var x0 = Int(lineBeginPos.x as! Double)
-    var y0 = Int(lineBeginPos.y as! Double)
-    var x1 = Int(lineEndPos.x as! Double)
-    var y1 = Int(lineEndPos.y as! Double)
+    var x0 = lineBeginPos.x.toInt()
+    var y0 = lineBeginPos.y.toInt()
+    var x1 = lineEndPos.x.toInt()
+    var y1 = lineEndPos.y.toInt()
 
     var steep = false
     var inverse = false

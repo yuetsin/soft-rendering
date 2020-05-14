@@ -9,13 +9,13 @@ public struct SRCanvas {
     public var worldCamera: Camera<Double>!
     
     // canvas buffer
-    private var imageBuffer: [Pixel]!
-    private var zBuffer: [Double]!
-    private var worldLights: [Light]!
+    public var imageBuffer: [Pixel]!
+    public var zBuffer: [Double]!
+    public var worldLights: [Light]!
 
     // pre-rendering object queues
-    private var objects2D: [ObjectDrawProtocol2D] = []
-    private var objects3D: [ObjectDrawProtocol3D] = []
+    public var objects2D: [ObjectDrawProtocol2D] = []
+    public var objects3D: [ObjectDrawProtocol3D] = []
     
     public func getObject2DCount() -> Int {
         return objects2D.count
@@ -44,6 +44,20 @@ public struct SRCanvas {
         let pixelCount = Int(canvasSize.width * canvasSize.height)
         imageBuffer = [Pixel](repeating: bgPixel, count: pixelCount)
         zBuffer = [Double](repeating: Double.infinity, count: pixelCount)
+    }
+    
+    mutating public func moveCamera(offset: CGSize) {
+//        NSLog("operating move \(offset)")
+        let moveFactor: Double = 100
+        let distance = (worldCamera.lookingAtPos - worldCamera.eyePos).magnitude()
+        let watchVector = (worldCamera.lookingAtPos - worldCamera.eyePos)
+        
+        let moveXVector = worldCamera.up.cross(with: watchVector).normalize() * (-Double(offset.width) / moveFactor)
+        let moveYVector = worldCamera.up.normalize() * (Double(offset.height) / moveFactor)
+        
+        let resultOffset = (worldCamera.eyePos + moveXVector + moveYVector).normalize() * distance
+        
+        worldCamera.eyePos = worldCamera.lookingAtPos + resultOffset
     }
     
     // add drawable objects to pre-rendering queues

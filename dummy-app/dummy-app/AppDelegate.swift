@@ -17,7 +17,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         let contentView = ControlPanelView(size: CGSize(width: 550, height: 400))
-
         window = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 600, height: 480),
             styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],

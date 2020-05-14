@@ -32,3 +32,16 @@ public func *(left: CIColor, right: CIColor) -> CIColor {
                    alpha: left.alpha * right.alpha,
                    colorSpace: left.colorSpace) ?? .clear
 }
+
+public func -(left: CGSize, right: CGSize) -> CGSize {
+    return CGSize(width: left.width - right.width, height: left.height - right.height)
+}
+
+extension FloatingPoint {
+    func toInt() -> Int {
+        if self.isNormal {
+            return Int(self as! Double)
+        }
+        return 0
+    }
+}
