@@ -2,6 +2,9 @@ import Cocoa
 
 @inlinable
 public func renderLight(lights: [Light], material: Material, camera: Camera<Double>, position: Vector3d, normal: Vector3d) -> CIColor {
+    if lights.count == 0 {
+        return material.ambientColor
+    }
     var ambient: CIColor = .clear, diffuse: CIColor = .clear, specular: CIColor = .clear
     for light in lights {
         light.lighting(material: material,

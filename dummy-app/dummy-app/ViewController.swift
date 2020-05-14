@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SwiftUI
 
 class ViewController: NSViewController {
     
@@ -49,7 +50,7 @@ class ViewController: NSViewController {
         let fragment = ShadingFragment3D(tPointA: randomPoint3d(size: CGSize(width: 3, height: 3)),
                                          tPointB: randomPoint3d(size: CGSize(width: 3, height: 3)),
                                          tPointC: randomPoint3d(size: CGSize(width: 3, height: 3)),
-                                         material: Material(shininess: defaultShininess, ambientColor: randomCIColor(), diffuseColor: randomCIColor(), specularColor: randomCIColor(), reflectColor: randomCIColor()))
+                                         material: Material(shininess: defaultShininess, ambientColor: randomCIColor(), diffuseColor: randomCIColor(), specularColor: .white, reflectColor: .white))
 //
 //
 //        let fragment3d = TextureFragment3D(pointA: randomPoint3d(size: CGSize(width: 10, height: 10)),
@@ -79,12 +80,10 @@ class ViewController: NSViewController {
             canvas.addObject(object: line)
         }
         
-        for line in generateAxis(length: 3) {
+        for line in generateAxis(length: 5) {
             canvas.addObject(object: line)
         }
 
-        view.addSubview(canvas)
-        
         canvas.render()
     }
 

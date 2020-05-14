@@ -1,2 +1,2 @@
 # soft-rendering
-Naïve software renderer, written in Swift Playground.
+Naïve software renderer demonstration, written in Swift Playground.
