@@ -10,6 +10,7 @@ public struct ControlPanelView: View {
     
     public init(size: CGSize, color: CIColor = .clear) {
         CanvasManager.canvas = SRCanvas(size: size, color: color)
+        drawReferences()
     }
     
     public func drawReferences() {
@@ -24,8 +25,8 @@ public struct ControlPanelView: View {
     
     public func redrawCanvas() {
         CanvasManager.canvas?.render()
-        image = CanvasManager.canvas?.resample()
         (canvasDebugInfo, objectDebugInfo, lightDebugInfo) = CanvasManager.generateDebugInfo()
+        image = CanvasManager.canvas?.resample()
     }
     
     public var body: some View {
@@ -37,12 +38,7 @@ public struct ControlPanelView: View {
                 Button(action: {
                     self.redrawCanvas()
                 }) {
-                    Text("Refresh")
-                }
-                Button(action: {
-                    self.drawReferences()
-                }) {
-                    Text("Put Demo")
+                    Text("Render")
                 }
             }
             
@@ -59,7 +55,7 @@ public struct ControlPanelView: View {
                         Text("Left")
                     }
                     if self.image != nil {
-                        Image(nsImage: self.image!)
+                        Image(nsImage: self.image!).resizable().scaledToFit()
                     } else {
                         Text("[canvas not rendered]")
                     }
@@ -76,11 +72,5 @@ public struct ControlPanelView: View {
                 }
             }
         }.padding()
-    }
-}
-
-struct ControlPanel_Previews: PreviewProvider {
-    static var previews: some View {
-        ControlPanelView(size: CGSize(width: 400, height: 300), color: .white)
     }
 }
