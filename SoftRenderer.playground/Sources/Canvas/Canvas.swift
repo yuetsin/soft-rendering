@@ -49,13 +49,15 @@ public struct SRCanvas {
     mutating public func moveCamera(offset: CGSize) {
 //        NSLog("operating move \(offset)")
         let moveFactor: Double = 100
-        let distance = (worldCamera.lookingAtPos - worldCamera.eyePos).magnitude()
-        let watchVector = (worldCamera.lookingAtPos - worldCamera.eyePos)
         
-        let moveXVector = worldCamera.up.cross(with: watchVector).normalize() * (-Double(offset.width) / moveFactor)
+        let cameraPos = worldCamera.eyePos - worldCamera.lookingAtPos
+        let distance = (worldCamera.eyePos - worldCamera.lookingAtPos).magnitude()
+        
+        
+        let moveXVector = worldCamera.up.cross(with: cameraPos).normalize() * (Double(offset.width) / moveFactor)
         let moveYVector = worldCamera.up.normalize() * (Double(offset.height) / moveFactor)
         
-        let resultOffset = (worldCamera.eyePos + moveXVector + moveYVector).normalize() * distance
+        let resultOffset = (cameraPos + moveXVector + moveYVector).normalize() * distance
         
         worldCamera.eyePos = worldCamera.lookingAtPos + resultOffset
     }
