@@ -99,8 +99,8 @@ public func createCameraMatrix<F: FloatingPoint>(camera: Camera<F>) -> Matrix<F>
     var result = Matrix<F>(rows: 4, columns: 4)
     
     let zVector = (camera.lookingAtPos - camera.eyePos).normalize()
-    let xVector = camera.up.crossMultiply(with: zVector).normalize()
-    let yVector = zVector.crossMultiply(with: xVector)
+    let xVector = camera.up.cross(with: zVector).normalize()
+    let yVector = zVector.cross(with: xVector)
     
     result.setRow(row: 0, to: [xVector.x, xVector.y, xVector.z, .zero])
     result.setRow(row: 1, to: [yVector.x, yVector.y, yVector.z, .zero])

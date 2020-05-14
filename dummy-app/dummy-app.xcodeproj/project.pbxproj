@@ -11,6 +11,12 @@
 		8A2ED3E0246BD99B00AA1CE9 /* CropCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2ED3DF246BD99B00AA1CE9 /* CropCheck.swift */; };
 		8A2ED3E2246BDC5600AA1CE9 /* PointTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2ED3E1246BDC5600AA1CE9 /* PointTransform.swift */; };
 		8A3C47EB246CD64100E94594 /* RenderPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C47EA246CD64100E94594 /* RenderPoint.swift */; };
+		8A3C47ED246CDD8500E94594 /* GouraudInterpolate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C47EC246CDD8500E94594 /* GouraudInterpolate.swift */; };
+		8A3C47EF246CDE4900E94594 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C47EE246CDE4900E94594 /* Extensions.swift */; };
+		8A3C47FC246CE5EA00E94594 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C47FB246CE5EA00E94594 /* Material.swift */; };
+		8A3C47FE246CE70400E94594 /* DirectionalLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C47FD246CE70400E94594 /* DirectionalLight.swift */; };
+		8A3C4800246CE85E00E94594 /* PointLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C47FF246CE85E00E94594 /* PointLight.swift */; };
+		8A3C4802246CEB2900E94594 /* SpotLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C4801246CEB2900E94594 /* SpotLight.swift */; };
 		8A6D7161246A2F6A003CA46C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6D7160246A2F6A003CA46C /* AppDelegate.swift */; };
 		8A6D7163246A2F6A003CA46C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6D7162246A2F6A003CA46C /* ViewController.swift */; };
 		8A6D7165246A2F6A003CA46C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A6D7164246A2F6A003CA46C /* Assets.xcassets */; };
@@ -20,9 +26,9 @@
 		8A72CF33246BAEBB004E153F /* ObjectDrawProtocol2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF13246BAEBB004E153F /* ObjectDrawProtocol2D.swift */; };
 		8A72CF34246BAEBB004E153F /* ObjectDrawProtocol3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF14246BAEBB004E153F /* ObjectDrawProtocol3D.swift */; };
 		8A72CF35246BAEBB004E153F /* TextureFragment3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF16246BAEBB004E153F /* TextureFragment3D.swift */; };
-		8A72CF36246BAEBB004E153F /* Fragment3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF17246BAEBB004E153F /* Fragment3D.swift */; };
+		8A72CF36246BAEBB004E153F /* GouraudFragment3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF17246BAEBB004E153F /* GouraudFragment3D.swift */; };
 		8A72CF37246BAEBB004E153F /* Line3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF18246BAEBB004E153F /* Line3D.swift */; };
-		8A72CF38246BAEBB004E153F /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF19246BAEBB004E153F /* Light.swift */; };
+		8A72CF38246BAEBB004E153F /* LightProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF19246BAEBB004E153F /* LightProtocol.swift */; };
 		8A72CF39246BAEBB004E153F /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF1A246BAEBB004E153F /* Camera.swift */; };
 		8A72CF3A246BAEBB004E153F /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF1C246BAEBB004E153F /* Random.swift */; };
 		8A72CF3B246BAEBB004E153F /* Normalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF1D246BAEBB004E153F /* Normalize.swift */; };
@@ -36,11 +42,13 @@
 		8A72CF43246BAEBB004E153F /* Vector3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF28246BAEBB004E153F /* Vector3D.swift */; };
 		8A72CF44246BAEBB004E153F /* FragmentInterpolate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF2A246BAEBB004E153F /* FragmentInterpolate.swift */; };
 		8A72CF45246BAEBB004E153F /* LinearInterpolate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF2B246BAEBB004E153F /* LinearInterpolate.swift */; };
-		8A72CF46246BAEBB004E153F /* ColorInterpolate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF2C246BAEBB004E153F /* ColorInterpolate.swift */; };
+		8A72CF46246BAEBB004E153F /* LinearColorInterpolate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF2C246BAEBB004E153F /* LinearColorInterpolate.swift */; };
 		8A72CF47246BAEBB004E153F /* TextureInterpolate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF2D246BAEBB004E153F /* TextureInterpolate.swift */; };
 		8A72CF48246BAEBB004E153F /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF2F246BAEBB004E153F /* Pixel.swift */; };
 		8A72CF49246BAEBB004E153F /* BitmapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A72CF30246BAEBB004E153F /* BitmapHelper.swift */; };
 		8A72CF4B246BB127004E153F /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A72CF4A246BB127004E153F /* grass.png */; };
+		8AAC214A246CEF3A00482105 /* ShadingFragment3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC2149246CEF3A00482105 /* ShadingFragment3D.swift */; };
+		8AAC214C246CF08E00482105 /* LightRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAC214B246CF08E00482105 /* LightRenderer.swift */; };
 		8AE0BB77246BC27200CFB471 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE0BB76246BC27200CFB471 /* Matrix.swift */; };
 		8AE0BB79246BC74C00CFB471 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE0BB78246BC74C00CFB471 /* Converter.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +58,12 @@
 		8A2ED3DF246BD99B00AA1CE9 /* CropCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropCheck.swift; sourceTree = "<group>"; };
 		8A2ED3E1246BDC5600AA1CE9 /* PointTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTransform.swift; sourceTree = "<group>"; };
 		8A3C47EA246CD64100E94594 /* RenderPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPoint.swift; sourceTree = "<group>"; };
+		8A3C47EC246CDD8500E94594 /* GouraudInterpolate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GouraudInterpolate.swift; sourceTree = "<group>"; };
+		8A3C47EE246CDE4900E94594 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8A3C47FB246CE5EA00E94594 /* Material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Material.swift; path = ../Utils/Material.swift; sourceTree = "<group>"; };
+		8A3C47FD246CE70400E94594 /* DirectionalLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DirectionalLight.swift; path = ../Utils/DirectionalLight.swift; sourceTree = "<group>"; };
+		8A3C47FF246CE85E00E94594 /* PointLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PointLight.swift; path = ../Utils/PointLight.swift; sourceTree = "<group>"; };
+		8A3C4801246CEB2900E94594 /* SpotLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SpotLight.swift; path = ../Utils/SpotLight.swift; sourceTree = "<group>"; };
 		8A6D715D246A2F6A003CA46C /* dummy-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dummy-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A6D7160246A2F6A003CA46C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A6D7162246A2F6A003CA46C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,9 +76,9 @@
 		8A72CF13246BAEBB004E153F /* ObjectDrawProtocol2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectDrawProtocol2D.swift; sourceTree = "<group>"; };
 		8A72CF14246BAEBB004E153F /* ObjectDrawProtocol3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectDrawProtocol3D.swift; sourceTree = "<group>"; };
 		8A72CF16246BAEBB004E153F /* TextureFragment3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureFragment3D.swift; sourceTree = "<group>"; };
-		8A72CF17246BAEBB004E153F /* Fragment3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fragment3D.swift; sourceTree = "<group>"; };
+		8A72CF17246BAEBB004E153F /* GouraudFragment3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GouraudFragment3D.swift; sourceTree = "<group>"; };
 		8A72CF18246BAEBB004E153F /* Line3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line3D.swift; sourceTree = "<group>"; };
-		8A72CF19246BAEBB004E153F /* Light.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		8A72CF19246BAEBB004E153F /* LightProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightProtocol.swift; sourceTree = "<group>"; };
 		8A72CF1A246BAEBB004E153F /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		8A72CF1C246BAEBB004E153F /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		8A72CF1D246BAEBB004E153F /* Normalize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Normalize.swift; sourceTree = "<group>"; };
@@ -78,11 +92,13 @@
 		8A72CF28246BAEBB004E153F /* Vector3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3D.swift; sourceTree = "<group>"; };
 		8A72CF2A246BAEBB004E153F /* FragmentInterpolate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FragmentInterpolate.swift; sourceTree = "<group>"; };
 		8A72CF2B246BAEBB004E153F /* LinearInterpolate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearInterpolate.swift; sourceTree = "<group>"; };
-		8A72CF2C246BAEBB004E153F /* ColorInterpolate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorInterpolate.swift; sourceTree = "<group>"; };
+		8A72CF2C246BAEBB004E153F /* LinearColorInterpolate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearColorInterpolate.swift; sourceTree = "<group>"; };
 		8A72CF2D246BAEBB004E153F /* TextureInterpolate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureInterpolate.swift; sourceTree = "<group>"; };
 		8A72CF2F246BAEBB004E153F /* Pixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
 		8A72CF30246BAEBB004E153F /* BitmapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitmapHelper.swift; sourceTree = "<group>"; };
 		8A72CF4A246BB127004E153F /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
+		8AAC2149246CEF3A00482105 /* ShadingFragment3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadingFragment3D.swift; sourceTree = "<group>"; };
+		8AAC214B246CF08E00482105 /* LightRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightRenderer.swift; sourceTree = "<group>"; };
 		8AE0BB76246BC27200CFB471 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 		8AE0BB78246BC74C00CFB471 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +122,34 @@
 				8A2ED3E1246BDC5600AA1CE9 /* PointTransform.swift */,
 			);
 			path = Projection;
+			sourceTree = "<group>";
+		};
+		8A3C47F0246CE0FE00E94594 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				8A72CF1A246BAEBB004E153F /* Camera.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		8A3C47F1246CE17600E94594 /* Lights */ = {
+			isa = PBXGroup;
+			children = (
+				8A72CF19246BAEBB004E153F /* LightProtocol.swift */,
+				8A3C47FD246CE70400E94594 /* DirectionalLight.swift */,
+				8A3C47FF246CE85E00E94594 /* PointLight.swift */,
+				8A3C4801246CEB2900E94594 /* SpotLight.swift */,
+				8AAC214B246CF08E00482105 /* LightRenderer.swift */,
+			);
+			path = Lights;
+			sourceTree = "<group>";
+		};
+		8A3C47FA246CE5E100E94594 /* Material */ = {
+			isa = PBXGroup;
+			children = (
+				8A3C47FB246CE5EA00E94594 /* Material.swift */,
+			);
+			path = Material;
 			sourceTree = "<group>";
 		};
 		8A6D7154246A2F6A003CA46C = {
@@ -142,6 +186,9 @@
 		8A72CF0E246BAEBB004E153F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				8A3C47FA246CE5E100E94594 /* Material */,
+				8A3C47F1246CE17600E94594 /* Lights */,
+				8A3C47F0246CE0FE00E94594 /* Camera */,
 				8A2ED3DC246BD74B00AA1CE9 /* Projection */,
 				8AE0BB75246BC27200CFB471 /* Matrix */,
 				8A72CF0F246BAEBB004E153F /* Rasteration */,
@@ -180,10 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				8A72CF16246BAEBB004E153F /* TextureFragment3D.swift */,
-				8A72CF17246BAEBB004E153F /* Fragment3D.swift */,
+				8A72CF17246BAEBB004E153F /* GouraudFragment3D.swift */,
 				8A72CF18246BAEBB004E153F /* Line3D.swift */,
-				8A72CF19246BAEBB004E153F /* Light.swift */,
-				8A72CF1A246BAEBB004E153F /* Camera.swift */,
+				8AAC2149246CEF3A00482105 /* ShadingFragment3D.swift */,
 			);
 			path = Objects3D;
 			sourceTree = "<group>";
@@ -194,6 +240,7 @@
 				8A72CF1C246BAEBB004E153F /* Random.swift */,
 				8A72CF1D246BAEBB004E153F /* Normalize.swift */,
 				8A72CF1F246BAEBB004E153F /* Consts.swift */,
+				8A3C47EE246CDE4900E94594 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -232,8 +279,9 @@
 			children = (
 				8A72CF2A246BAEBB004E153F /* FragmentInterpolate.swift */,
 				8A72CF2B246BAEBB004E153F /* LinearInterpolate.swift */,
-				8A72CF2C246BAEBB004E153F /* ColorInterpolate.swift */,
+				8A72CF2C246BAEBB004E153F /* LinearColorInterpolate.swift */,
 				8A72CF2D246BAEBB004E153F /* TextureInterpolate.swift */,
+				8A3C47EC246CDD8500E94594 /* GouraudInterpolate.swift */,
 			);
 			path = Interpolate;
 			sourceTree = "<group>";
@@ -328,38 +376,46 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AE0BB77246BC27200CFB471 /* Matrix.swift in Sources */,
+				8A3C47ED246CDD8500E94594 /* GouraudInterpolate.swift in Sources */,
 				8A72CF39246BAEBB004E153F /* Camera.swift in Sources */,
 				8A72CF32246BAEBB004E153F /* FragmentRasteration.swift in Sources */,
 				8A72CF31246BAEBB004E153F /* LineRasteration.swift in Sources */,
 				8A72CF44246BAEBB004E153F /* FragmentInterpolate.swift in Sources */,
 				8A72CF48246BAEBB004E153F /* Pixel.swift in Sources */,
 				8A6D7163246A2F6A003CA46C /* ViewController.swift in Sources */,
+				8A3C4802246CEB2900E94594 /* SpotLight.swift in Sources */,
 				8A72CF33246BAEBB004E153F /* ObjectDrawProtocol2D.swift in Sources */,
 				8A72CF42246BAEBB004E153F /* TextureCoords2D.swift in Sources */,
-				8A72CF46246BAEBB004E153F /* ColorInterpolate.swift in Sources */,
+				8A72CF46246BAEBB004E153F /* LinearColorInterpolate.swift in Sources */,
+				8A3C47FC246CE5EA00E94594 /* Material.swift in Sources */,
 				8A72CF43246BAEBB004E153F /* Vector3D.swift in Sources */,
 				8A72CF3E246BAEBB004E153F /* Line2D.swift in Sources */,
 				8A6D7161246A2F6A003CA46C /* AppDelegate.swift in Sources */,
+				8A3C47FE246CE70400E94594 /* DirectionalLight.swift in Sources */,
 				8A72CF47246BAEBB004E153F /* TextureInterpolate.swift in Sources */,
 				8A72CF35246BAEBB004E153F /* TextureFragment3D.swift in Sources */,
 				8A72CF41246BAEBB004E153F /* ScreenPoint.swift in Sources */,
 				8A72CF3F246BAEBB004E153F /* Fragment2D.swift in Sources */,
-				8A72CF38246BAEBB004E153F /* Light.swift in Sources */,
+				8A72CF38246BAEBB004E153F /* LightProtocol.swift in Sources */,
 				8A72CF40246BAEBB004E153F /* Vector2D.swift in Sources */,
+				8A3C47EF246CDE4900E94594 /* Extensions.swift in Sources */,
 				8A72CF49246BAEBB004E153F /* BitmapHelper.swift in Sources */,
 				8A72CF3D246BAEBB004E153F /* Canvas.swift in Sources */,
 				8A2ED3E2246BDC5600AA1CE9 /* PointTransform.swift in Sources */,
 				8A72CF3A246BAEBB004E153F /* Random.swift in Sources */,
 				8A2ED3DE246BD74B00AA1CE9 /* Transform.swift in Sources */,
 				8A3C47EB246CD64100E94594 /* RenderPoint.swift in Sources */,
-				8A72CF36246BAEBB004E153F /* Fragment3D.swift in Sources */,
+				8A72CF36246BAEBB004E153F /* GouraudFragment3D.swift in Sources */,
 				8A72CF45246BAEBB004E153F /* LinearInterpolate.swift in Sources */,
 				8A72CF34246BAEBB004E153F /* ObjectDrawProtocol3D.swift in Sources */,
 				8A72CF3C246BAEBB004E153F /* Consts.swift in Sources */,
 				8A2ED3E0246BD99B00AA1CE9 /* CropCheck.swift in Sources */,
+				8AAC214A246CEF3A00482105 /* ShadingFragment3D.swift in Sources */,
 				8A72CF3B246BAEBB004E153F /* Normalize.swift in Sources */,
 				8A72CF37246BAEBB004E153F /* Line3D.swift in Sources */,
 				8AE0BB79246BC74C00CFB471 /* Converter.swift in Sources */,
+				8A3C4800246CE85E00E94594 /* PointLight.swift in Sources */,
+				8AAC214C246CF08E00482105 /* LightRenderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,9 +35,13 @@ public class Vector3D<F: FloatingPoint>: ScreenPoint<F>, Equatable {
     }
     
     @inlinable
-    public func crossMultiply(with right: Vector3D<F>) -> Vector3D<F> {
+    public func cross(with right: Vector3D<F>) -> Vector3D<F> {
         return Vector3D<F>(self.y * right.z - right.y * self.z, self.z * right.x - self.x * right.z, self.x * right.y - right.x * self.y)
     }
+}
+
+public prefix func -<F>(value: Vector3D<F>) -> Vector3D<F> {
+    return Vector3D<F>(-value.x, -value.y, -value.z)
 }
 
 public func ==<F>(left: Vector3D<F>, right: Vector3D<F>) -> Bool {

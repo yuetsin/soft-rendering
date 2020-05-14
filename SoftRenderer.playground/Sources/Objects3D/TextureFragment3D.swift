@@ -7,6 +7,7 @@ public class TextureFragment3D: ObjectDrawProtocol3D {
     var textureSize: NSSize!
     var texCoordsA, texCoordsB, texCoordsC: TextureCoords2D!
 
+    
     public init(pointA: Vector3d,
                 pointB: Vector3d,
                 pointC: Vector3d,
@@ -22,6 +23,7 @@ public class TextureFragment3D: ObjectDrawProtocol3D {
         texCoordsA = coordsA
         texCoordsB = coordsB
         texCoordsC = coordsC
+        
     }
 
     public func drawOn(target pixels: inout [Pixel], canvasSize: CGSize, depthBuffer: inout [Double], lights: inout [Light], camera: Camera<Double>) {

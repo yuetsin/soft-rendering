@@ -1,7 +1,6 @@
 import Cocoa
 
 
-
 public func LinearColorInterpolate(since: CIColor, till: CIColor, interp: LinearInterpolate<Double>) -> CIColor {
     
     let progress = CGFloat(interp.u ?? 0)
@@ -17,16 +16,4 @@ public func LinearColorInterpolate(since: CIColor, till: CIColor, interp: Linear
                    green: (since.green + progress * greenDiff).normalize(),
                    blue: (since.blue + progress * blueDiff).normalize(),
                    alpha: (since.alpha + progress * alphaDiff).normalize())
-}
-
-public func GouraudInterpolate(colorA: CIColor, colorB: CIColor, colorC: CIColor, interp: FragmentInterpolate<Double>) -> CIColor {
-    
-    let u = CGFloat(interp.u), v = CGFloat(interp.v), w = CGFloat(interp.w)
-
-    let red = colorA.red * u + colorB.red * v + colorC.red * w
-    let green = colorA.green * u + colorB.green * v + colorC.green * w
-    let blue = colorA.blue * u + colorB.blue * v + colorC.blue * w
-    let alpha = colorA.alpha * u + colorB.alpha * v + colorC.alpha * w
-
-    return CIColor(red: red.normalize(), green: green.normalize(), blue: blue.normalize(), alpha: alpha.normalize())
 }

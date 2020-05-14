@@ -39,18 +39,28 @@ class ViewController: NSViewController {
 //                          endPoint: randomPoint3d(size: canvasSize),
 //                          color: randomCIColor(), endColor: randomCIColor())
 //
-//        let fragment = Fragment3D(pointA: randomPoint3d(size: canvasSize),
-//                                  pointB: randomPoint3d(size: canvasSize),
-//                                  pointC: randomPoint3d(size: canvasSize),
-//                                  colorA: randomCIColor())
+//        let fragment = GouraudFragment3D(pointA: randomPoint3d(size: CGSize(width: 3, height: 3)),
+//                                  pointB: randomPoint3d(size: CGSize(width: 3, height: 3)),
+//                                  pointC: randomPoint3d(size: CGSize(width: 3, height: 3)),
+//                                  colorA: .cyan,
+//                                  colorB: .magenta,
+//                                  colorC: .yellow)
+        
+        let fragment = ShadingFragment3D(tPointA: randomPoint3d(size: CGSize(width: 3, height: 3)),
+                                         tPointB: randomPoint3d(size: CGSize(width: 3, height: 3)),
+                                         tPointC: randomPoint3d(size: CGSize(width: 3, height: 3)),
+                                         material: Material(shininess: defaultShininess, ambientColor: randomCIColor(), diffuseColor: randomCIColor(), specularColor: randomCIColor(), reflectColor: randomCIColor()))
 //
 //
-//        let fragment3d = TextureFragment3D(pointA: randomPoint3d(size: canvasSize), pointB: randomPoint3d(size: canvasSize), pointC: randomPoint3d(size: canvasSize), texImage: NSImage(imageLiteralResourceName: "grass.png"), coordsA: .leftBottom, coordsB: .leftTop, coordsC: .rightBottom)
-//
+//        let fragment3d = TextureFragment3D(pointA: randomPoint3d(size: CGSize(width: 10, height: 10)),
+//                                           pointB: randomPoint3d(size: CGSize(width: 10, height: 10)),
+//                                           pointC: randomPoint3d(size: CGSize(width: 10, height: 10)),
+//                                                                 texImage: NSImage(imageLiteralResourceName: "grass.png"), coordsA: .leftBottom, coordsB: .leftTop, coordsC: .rightBottom)
+
 //        canvas.drawObject(object: line)
-//        canvas.drawObject(object: fragment)
+        canvas.addObject(object: fragment)
 //        canvas.drawObject(object: fragment3d)
-//        canvas.resample()
+        canvas.render()
     }
     
     override func viewDidLoad() {

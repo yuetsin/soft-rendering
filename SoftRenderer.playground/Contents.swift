@@ -24,7 +24,7 @@ let fragment = Fragment2D(pointA: Vector2d(0, 0),
 canvas.addObject(object: fragment)
 canvas.addObject(object: line)
 
-for fragment in generateCube(basePoint: Vector3d(1, 0, 0), size: 3) {
+for fragment in generateCube(basePoint: Vector3d(1, 0, 0.1), size: 3) {
     canvas.addObject(object: fragment)
 }
 

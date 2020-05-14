@@ -107,7 +107,7 @@ public func rasterize<F: FloatingPoint>(canvasWidth: F, canvasHeight: F, pA tPoi
 public func barycentric<F: FloatingPoint>(points: [Vector2D<F>], checkPoint: Vector2D<F>) -> Vector3D<F> {
     let left = Vector3D<F>(points[2].x - points[0].x, points[1].x - points[0].x, points[0].x - checkPoint.x)
     let right = Vector3D<F>(points[2].y - points[0].y, points[1].y - points[0].y, points[0].y - checkPoint.y)
-    let result = left.crossMultiply(with: right)
+    let result = left.cross(with: right)
     if abs(result.z) < 1 {
         return Vector3D<F>(-1, 1, 1)
     }

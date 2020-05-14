@@ -15,11 +15,35 @@ public let defaultCameraPosition = Vector3d(3, 3, 3)
 public let defaultLookingAtPosition = Vector3d(0, 0, 0)
 public let defaultCamera = Camera(position: defaultCameraPosition, lookingAtPosition: defaultLookingAtPosition, upVector: Vector3d(0, 0, 1), cameraFov: 1, cameraAspect: 1, camZn: 1, camZf: 2)
 
-// light default values
-public let defaultLight = Light(color: CIColor.white, type: .ambient)
+// material default values
+public let defaultMaterial = Material(shininess: 0.5,
+                                      ambientColor: .white,
+                                      diffuseColor: .white,
+                                      specularColor: .white,
+                                      reflectColor: .white)
+public let defaultShininess: CGFloat = 0.5
+
+public let halfTransparentWhite = CIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.1)
+public let defaultLights: [Light] = [
+    DirectionalLight(shininess: 0.75,
+                     ambient: .white,
+                     diffuse: .white,
+                     specular: .white,
+                     direction: Vector3d(0, 0, -1)),
+
+    PointLight(ambient: .white,
+               diffuse: .white,
+               specular: .white,
+               attenuation: Vector3d(1, 1, 1),
+               position: Vector3d(0, 0, 2)),
+
+    SpotLight(cutOff: 0.5, outCutOff: 2.0,
+              ambient: .white, diffuse: .white, specular: .white,
+              position: Vector3d(2, 2, 2),
+              direction: Vector3d(0, 0, -1),
+              attenuation: Vector3d(1, 1, 1))]
 
 public func generateCube(basePoint: Vector3d, size: Double) -> [TextureFragment3D] {
-    
     var fragments: [TextureFragment3D] = []
     
     fragments.append(TextureFragment3D(pointA: basePoint,

@@ -22,7 +22,7 @@ public class SRCanvas: NSImageView {
         super.init(frame: NSRect(origin: .zero, size: canvasSize))
         imageSize = canvasSize
         canvasBgColor = bgColor
-        worldLights = []
+        worldLights = defaultLights
         worldCamera = defaultCamera
         refreshCanvas(size: canvasSize, color: bgColor)
     }

@@ -1,6 +1,6 @@
 import Cocoa
 
-public class Fragment3D: ObjectDrawProtocol3D {
+public class GouraudFragment3D: ObjectDrawProtocol3D {
     var tPointA, tPointB, tPointC: Vector3d!
     var tColorA, tColorB, tColorC: CIColor!
 
@@ -37,7 +37,11 @@ public class Fragment3D: ObjectDrawProtocol3D {
                 if singleColor {
                     pixel = color2Pixel(color: tColorA)
                 } else {
-                    let color = GouraudInterpolate(colorA: tColorA, colorB: tColorB, colorC: tColorC, interp: interp)
+                    let color = GouraudInterpolateWithCorrection(colorA: tColorA,
+                                                                 colorB: tColorB,
+                                                                 colorC: tColorC,
+                                                                 interp: interp,
+                                                                 zA: pA.z, zB: pB.z, zC: pC.z, refZ: point.z)
                     pixel = color2Pixel(color: color)
                 }
                 putPixel(pixels: &pixels, x: point.x, y: point.y, size: canvasSize, target: pixel)
