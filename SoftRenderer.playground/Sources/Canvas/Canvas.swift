@@ -37,7 +37,7 @@ public class SRCanvas: NSImageView {
         let bgPixel = color2Pixel(color: fillColor)
         let pixelCount = Int(canvasSize.width * canvasSize.height)
         imageBuffer = [Pixel](repeating: bgPixel, count: pixelCount)
-        zBuffer = [Double](repeating: -Double.infinity, count: pixelCount)
+        zBuffer = [Double](repeating: Double.infinity, count: pixelCount)
     }
     
     // add drawable objects to pre-rendering queues

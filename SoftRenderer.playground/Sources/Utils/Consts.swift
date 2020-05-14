@@ -44,9 +44,9 @@ public func generateCube(basePoint: Vector3d, size: Double) -> [TextureFragment3
 public func generateAxis(length: Double) -> [Line3D] {
     var lines: [Line3D] = []
     
-    lines.append(Line3D(beginPoint: Vector3d(), endPoint: Vector3d(length, 0, 0), color: .red))
-    lines.append(Line3D(beginPoint: Vector3d(), endPoint: Vector3d(0, length, 0), color: .green))
-    lines.append(Line3D(beginPoint: Vector3d(), endPoint: Vector3d(0, 0, length), color: .blue))
+    lines.append(Line3D(beginPoint: Vector3d(-length, 0, 0), endPoint: Vector3d(length, 0, 0), color: .red))
+    lines.append(Line3D(beginPoint: Vector3d(0, -length, 0), endPoint: Vector3d(0, length, 0), color: .green))
+    lines.append(Line3D(beginPoint: Vector3d(0, 0, -length), endPoint: Vector3d(0, 0, length), color: .blue))
     
     return lines
 }
@@ -57,12 +57,15 @@ public func generateRefrenceLines(distance: Double, count: Int) -> [Line3D] {
     let length = distance * Double(count * 2)
     
     for i in -count ... count {
+        if i == 0 {
+            continue
+        }
         lines.append(Line3D(beginPoint: Vector3d(-length, distance * Double(i), 0),
                             endPoint: Vector3d(length, distance * Double(i), 0),
-                            color: .gray))
+                            color: .white, endColor: .black))
         lines.append(Line3D(beginPoint: Vector3d(distance * Double(i), -length, 0),
                             endPoint: Vector3d(distance * Double(i), length, 0),
-        color: .gray))
+        color: .white, endColor: .black))
     }
     
     return lines

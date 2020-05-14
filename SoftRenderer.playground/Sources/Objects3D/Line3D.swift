@@ -31,7 +31,7 @@ public class Line3D: ObjectDrawProtocol3D {
             } else {
                 pixel = color2Pixel(color: LinearColorInterpolate(since: lineBeginColor, till: lineEndColor, interp: interp))
             }
-            if getZBuffer(zBuffer: &depthBuffer, x: x, y: y, size: canvasSize) ?? -Double.infinity <= z {
+            if getZBuffer(zBuffer: &depthBuffer, x: x, y: y, size: canvasSize) ?? Double.infinity >= z {
                 putZBuffer(zBuffer: &depthBuffer, x: x, y: y, size: canvasSize, target: z)
                 putPixel(pixels: &pixels, x: x, y: y, size: canvasSize, target: pixel)
             }

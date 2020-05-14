@@ -15,3 +15,12 @@ public struct TextureCoords2D {
     public static let rightBottom = TextureCoords2D(1, 0)
 }
 
+// overload operations
+public func *(left: TextureCoords2D, right: Double) -> TextureCoords2D {
+    return TextureCoords2D(left.u * right, left.v * right)
+}
+
+
+public func /(left: TextureCoords2D, right: Double) -> TextureCoords2D {
+    return TextureCoords2D(left.u / right, left.v / right)
+}

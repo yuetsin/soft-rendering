@@ -46,6 +46,17 @@ public struct Matrix<F: FloatingPoint> {
             set(row: index, column: column, to: target[index])
         }
     }
+    
+    @inlinable
+    public func transpose() -> Matrix<F> {
+        var result = Matrix<F>(rows: columnCount, columns: rowCount)
+        for row in 0 ..< rowCount {
+            for column in 0 ..< columnCount {
+                result.set(row: column, column: row, to: get(row: row, column: column) ?? .zero)
+            }
+        }
+        return result
+    }
 }
 
 public func +<F: FloatingPoint>(left: Matrix<F>, right: Matrix<F>) -> Matrix<F> {

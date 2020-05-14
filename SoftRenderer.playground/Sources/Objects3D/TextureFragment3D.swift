@@ -34,11 +34,14 @@ public class TextureFragment3D: ObjectDrawProtocol3D {
                   pA: pA, pB: pB, pC: pC, handler: { point, interp in
             var pixel: Pixel!
 
-            if getZBuffer(zBuffer: &depthBuffer, x: point.x, y: point.y, size: canvasSize) ?? -Double.infinity <= point.z {
+            if getZBuffer(zBuffer: &depthBuffer, x: point.x, y: point.y, size: canvasSize) ?? Double.infinity >= point.z {
                 
-//                let color = TextureInterpolate(coordsA: texCoordsA, coodsB: tColorB, colorC: tColorC, interp: interp)
-                
-                let color = TextureInterpolate(texture: &texture, size: textureSize, coordsA: texCoordsA, coordsB: texCoordsB, coordsC: texCoordsC, interp: interp)
+//                let color = TextureInterpolate(texture: &texture, size: textureSize,
+//                                               coordsA: texCoordsA, coordsB: texCoordsB,
+//                                               coordsC: texCoordsC, interp: interp)
+                let color = TextureInterpolateWithCorrection(texture: &texture, size: textureSize,
+                                                             rawCoordsA: texCoordsA, rawCoordsB: texCoordsB, rawCoordsC: texCoordsC,
+                                                             interp: interp, zA: pA.z, zB: pB.z, zC: pC.z, z: point.z)
                 
                 pixel = color2Pixel(color: color)
                 

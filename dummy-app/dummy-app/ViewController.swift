@@ -25,12 +25,12 @@ class ViewController: NSViewController {
     }
     
     @IBAction func moveUpCamera(_ sender: NSButton) {
-        canvas.worldCamera.eyePos.y += 0.5
+        canvas.worldCamera.eyePos.z += 0.5
         canvas.render()
     }
     
     @IBAction func moveDownCamera(_ sender: NSButton) {
-        canvas.worldCamera.eyePos.y -= 0.5
+        canvas.worldCamera.eyePos.z -= 0.5
         canvas.render()
     }
     
@@ -61,7 +61,7 @@ class ViewController: NSViewController {
         canvas = SRCanvas(size: canvasSize, color: .clear)
 
         
-        for fragment in generateCube(basePoint: Vector3d(1, 0, 0), size: 3) {
+        for fragment in generateCube(basePoint: Vector3d(1, 1, 0.1), size: 3) {
             canvas.addObject(object: fragment)
         }
 

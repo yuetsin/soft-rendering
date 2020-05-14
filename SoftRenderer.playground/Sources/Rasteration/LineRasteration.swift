@@ -6,12 +6,16 @@ public func rasterize<F: FloatingPoint>(canvasWidth: F, canvasHeight: F, _ lineB
     let z0 = lineBeginPos.z as! Double, z1 = lineEndPos.z as! Double
     let flatBeginPos = Vector2D<F>(lineBeginPos.x, lineBeginPos.y)
     let flatEndPos = Vector2D<F>(lineEndPos.x, lineEndPos.y)
+    
     rasterize(canvasWidth: canvasWidth, canvasHeight: canvasHeight, flatBeginPos, flatEndPos,
               handler: { p2i, interp in
                 var z = interp.u * (1 / z0)
                 z += interp.v * (1 / z1)
                 z = 1 / z
                 
+//                var screenMatrix = Matrix<F>(rows: 4, columns: 1)
+//                screenMatrix.setColumn(column: 0, to: [p2i.x, p2i.y, z, 1])
+//                
                 handler(RenderPoint(p2i.x, p2i.y, z), interp)
     })
 }

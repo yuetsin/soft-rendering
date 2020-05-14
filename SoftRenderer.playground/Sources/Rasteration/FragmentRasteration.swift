@@ -6,6 +6,7 @@ public func rasterize<F: FloatingPoint>(canvasWidth: F, canvasHeight: F, pA tPoi
     let flatPointA = Vector2D<F>(tPointA.x, tPointA.y)
     let flatPointB = Vector2D<F>(tPointB.x, tPointB.y)
     let flatPointC = Vector2D<F>(tPointC.x, tPointC.y)
+    
     rasterize(canvasWidth: canvasWidth, canvasHeight: canvasHeight, pA: flatPointA, pB: flatPointB, pC: flatPointC, handler: { point, interp in
         // use ugly expression to avoid
         // "The compiler is unable to type-check this expression in reasonable time" error

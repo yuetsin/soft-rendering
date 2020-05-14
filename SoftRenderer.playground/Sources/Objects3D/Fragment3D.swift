@@ -33,7 +33,7 @@ public class Fragment3D: ObjectDrawProtocol3D {
         rasterize(canvasWidth: Double(canvasSize.width), canvasHeight: Double(canvasSize.height), pA: pA, pB: pB, pC: pC, handler: { point, interp in
             var pixel: Pixel!
 
-            if getZBuffer(zBuffer: &depthBuffer, x: point.x, y: point.y, size: canvasSize) ?? -Double.infinity <= point.z {
+            if getZBuffer(zBuffer: &depthBuffer, x: point.x, y: point.y, size: canvasSize) ?? Double.infinity >= point.z {
                 if singleColor {
                     pixel = color2Pixel(color: tColorA)
                 } else {

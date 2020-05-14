@@ -1,5 +1,7 @@
 import Cocoa
 
+
+
 public func LinearColorInterpolate(since: CIColor, till: CIColor, interp: LinearInterpolate<Double>) -> CIColor {
     
     let progress = CGFloat(interp.u ?? 0)

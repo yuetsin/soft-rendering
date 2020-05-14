@@ -9,18 +9,25 @@ public class Camera<F: FloatingPoint> {
     public var zn: F!
     public var zf: F!
     
-    private var cameraMatrix: Matrix<F>!
     
     public init(position: Vector3D<F>, lookingAtPosition: Vector3D<F>, upVector: Vector3D<F>, cameraFov: F, cameraAspect: F, camZn: F, camZf: F) {
         eyePos = position
         lookingAtPos = lookingAtPosition
         up = upVector
-        
+
         fov = cameraFov
         aspect = cameraAspect
         zn = camZn
         zf = camZf
-
-        cameraMatrix = createCameraMatrix(camera: self)
+    }
+    
+    public func generateTransformMatrix() -> Matrix<F> {
+        let cameraMatrix = createCameraMatrix(camera: self)
+        let perspMatrix = createPerspectiveMatrix(camera: self)
+        return perspMatrix * cameraMatrix
+    }
+    
+    public func generateUntransformMatrix() -> Matrix<F> {
+        return generateTransformMatrix().transpose()
     }
 }

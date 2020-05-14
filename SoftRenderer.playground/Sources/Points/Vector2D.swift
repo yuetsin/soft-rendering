@@ -52,7 +52,7 @@ public func *<F>(left: Vector2D<F>, right: F) -> Vector2D<F> {
 }
 
 public func *<F>(left: Vector2D<F>, right: Vector2D<F>) -> F {
-    return left.x * right.x + left.y + right.y
+    return left.x * right.x + left.y * right.y
 }
 
 public func /<F>(left: Vector2D<F>, right: F) -> Vector2D<F> {
